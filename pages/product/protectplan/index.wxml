@@ -1,0 +1,62 @@
+<!--pages/product/protectplan/index.wxml-->
+<view class='page'>
+  <view class="hd" style="transform:rotateZ({{angle}}deg);">
+    <image class="logo" src='../../../images/tou.png'></image>
+    <image class="wave" src='../../../images/head.png' mode=""></image>
+    <view class='question'>{{questions[index].question}}</view>
+  </view>
+  <view>
+
+    <view class='wux-wingblank--default'>
+      <view class='' wx:if='{{questions[index].picture.length>1}}'>
+        <van-radio-group value="{{ radio1 }}" data-key="radio1" data-option="{{index}}" custom-class="demo-radio-group" bind:change="onChange">
+          <view class='bd'>
+            <view class='choose' data-value="{{questions[index].option[0].value}}" data-option="{{index}}">
+              <image   mode='aspectFit' src='{{questions[index].option[0].picture}}'></image>
+              <van-radio value='0' name="{{questions[index].option[0].value}}">{{questions[index].option[0].question}}</van-radio>
+            </view>
+            <view class='choose' data-value="{{questions[index].option[1].value}}" data-option="{{index}}">
+              <image  mode='aspectFit' src='{{questions[index].option[1].picture}}'></image>
+              <van-radio value='1' name="{{questions[index].option[1].value}}">{{questions[index].option[1].question}}</van-radio>
+            </view>
+          </view>
+        </van-radio-group>
+      </view>
+      <view class='' wx:else>
+        <view class='questionDeital'>{{questions[index].question2}}</view>
+        <image  mode='aspectFit' style='width: 160rpx;height: 160rpx;padding-left:270rpx;' src='{{questions[index].picture[0]}}'></image>
+        <van-radio-group value="{{ radio1 }}" data-key="radio1" data-option="{{index}}" custom-class="demo-radio-group" bind:change="onChange">
+          <view class='bd'>
+            <view data-idx='{{1}}'>
+              <van-radio value='0' checked name="{{questions[index].option[0].value}}">{{questions[index].option[0].question}}</van-radio>
+            </view>
+
+            <view style='margin-left:90rpx;'>
+              <van-radio name="{{questions[index].option[1].value}}" value='1'>{{questions[index].option[1].question}}</van-radio>
+            </view>
+          </view>
+        </van-radio-group>
+      </view>
+      <view class="button-sp-area" style='margin:2.35rem 0.3rem 0.3rem;' wx:if='{{index!=0 ? true:false}}' bindtap="goback">
+        <image style='width:60rpx;height:60rpx;' mode='aspectFit' src='../../../images/jiantou.png'></image>
+        <view>上一步</view>
+      </view>
+    </view>
+  </view>
+  <view class='page__ft'>
+    <wux-steps current="{{ current }}">
+      <wux-step title=""></wux-step>
+       <wux-step title=""></wux-step>
+      <wux-step title=""></wux-step>
+      <wux-step title=""></wux-step>
+      <wux-step title=""></wux-step>
+     <!-- <wux-step title=""></wux-step>
+       <wux-step title=""></wux-step>
+       <wux-step title=""></wux-step> -->
+    </wux-steps>
+  </view>
+
+  <view class="button-sp-area" wx:if='{{isSelected}}'>
+    <button type="default" bindtap="submit">开始测评</button>
+  </view>
+</view>

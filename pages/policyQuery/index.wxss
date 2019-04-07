@@ -1,0 +1,12 @@
+/* pages/policyQuery/index.wxss */
+.page__desc{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  align-content: center;
+  padding-left: 35%;
+}
+.weui-btn{
+  background-color: #04ACD4;
+  color: #fff;
+}

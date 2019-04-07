@@ -1,0 +1,254 @@
+/* pages/insure/index.wxss */
+@import "../../style/weui.wxss";
+
+.page {
+  width: 100%;
+  font-family: PingFangSC-Regular;
+}
+
+
+
+.titles2 {
+  width: 100%;
+  color: #666;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  background: rgb(240, 240, 240);
+  padding-left: 30rpx;
+  padding-top: 25rpx;
+  height: 60rpx;
+  line-height: 40rpx;
+}
+
+.navigator-list {
+  width: 90%;
+  height: 58rpx;
+  list-style: none;
+  display: -webkit-box;
+  margin: 0 auto;
+}
+
+.flex-item {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 58rpx;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.flex-item.active {
+  background: #04acd4;
+  color: white;
+}
+
+.detailTable {
+  padding-bottom: 1rpx;
+}
+
+.insDetailtable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  line-height: 40px;
+  text-align: center;
+}
+
+.td {
+  text-align: left;
+  display: flex;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.th {
+  display: flex;
+  flex-flow: row;
+  font-size: 24rpx;
+}
+
+#weui-label {
+  width: 135rpx;
+}
+
+
+.bottom-btn .nobtn {
+  padding-top: 0.2em;
+  float: clear;
+  width: 100%;
+}
+
+/*.addform {
+  margin-bottom: 50px;
+}*/
+
+/*.insure {
+  margin-bottom: 50px;
+}*/
+
+.weui-input {
+  text-align: right;
+  padding-left: 50rpx;
+}
+
+.picker {
+  text-align: right;
+  padding-left: 50rpx;
+}
+
+.part0 {
+  height: 280rpx;
+  background-color: #fff;
+}
+
+.weui-form-preview__item {
+  width: 100%;
+  height: 60rpx;
+  padding-left: 30rpx;
+  font-size: 24rpx;
+  color: #999;
+  padding-top: 25rpx;
+  line-height: 40rpx;
+}
+
+.view1 {
+  background-color: #fff;
+}
+
+.view2 {
+  background-color: #f8f8f8;
+}
+
+.weui-cell__hd {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.weui-cell__bd {
+  font-size: 30rpx;
+}
+
+.radio-group {
+  font-size: 30rpx;
+  color: #d8d8d8;
+}
+modal{
+  background-color: #ffffff;
+}
+.radio-group {
+  display: flex;
+  width: 100%;
+  padding-left: 210rpx;
+}
+.radio-group label{
+  float: left;
+}
+.weui-check__label{
+   font-size: 30rpx;
+  color: #d8d8d8;
+}
+.liability{
+padding:2px 5px;
+display: flex;
+
+}
+.wux-card {
+position:relative;
+min-height:192rpx;
+padding-bottom:12rpx;
+display:-webkit-box;
+display:-webkit-flex;
+display:flex;
+-webkit-box-orient:vertical;
+-webkit-flex-direction:column;
+flex-direction:column;
+background-color:#fff;
+margin:0rpx 0 18rpx 0;
+
+}
+.default {
+margin-left:20rpx;
+margin-right:20rpx;
+
+}
+.header{
+  width: 100%;
+  height: 108rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 100;
+}
+.nav{
+  display: inline-block;
+  margin: 35rpx 20rpx 20rpx 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.nav view{
+  color: #666666;
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  padding: 0 25rpx;
+  border-radius: 30.5rpx;
+  border: 2px solid #CCCCCC;
+  margin-left: 20rpx;
+}
+.nav .active{
+  color: #fff;
+  background: #04ACD4;
+border-radius: 30.5px;
+border: 0px solid #04ACD4;
+  /*background-image: linear-gradient(to top, #4abdcc, #51d7df);*/
+}
+.weui-cell__ft{
+color: #666666;
+  font-size: 30rpx;
+}
+.notice{
+font-size: 13px;
+color: #04ACD4;
+letter-spacing: 0;
+}
+
+.weui-form-preview__ft {
+position:relative;
+line-height:18px !important;
+display:-webkit-box;
+display:-webkit-flex;
+display:flex;
+
+}
+.insurebutton{
+  padding-top:0.2em;
+float:clear;
+width:100%;
+  background-color:#04ACD4;
+
+color:#fff;
+display:block;
+font-size:17px;
+border-radius:0;
+height:100%;
+text-decoration:none;
+text-align:center;
+
+}
+.bottom-insure {
+width:100%;
+bottom:0;
+left:0;
+height:50px;
+box-shadow:-2px -2px 5px #aaa;
+z-index:10;
+
+}
+radio{
+  color: #04ACD4;
+}
+radio-group .weui-cell__bd{
+  color:#999;
+}
+
+
+

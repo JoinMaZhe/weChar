@@ -1,0 +1,136 @@
+/* pages/my/feedback/feedback.wxss */
+@import "../../../style/weui.wxss";
+
+textarea {
+  width: 20.5em !important;
+  height: 300px;
+  display: block;
+  position: relative;
+  background: #fff;
+}
+
+.weui-cells {
+  background-color: #fff !important;
+  line-height: 1.47058824 !important;
+  font-size: 17px !important;
+  overflow: hidden !important;
+  /* position: ; */
+}
+
+input {
+  display: block;
+  height: 1.4rem;
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: UICTFontTextStyleBody;
+  min-height: 1.4rem;
+}
+
+.weui-btn_primary {
+  background-color: #169bd5;
+}
+
+.weui-btn {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  line-height: 1.55555556;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.weui-btn-area {
+  margin: 1.17647059em 15px 0.3em;
+  /* margin-bottom:141px;
+margin-top:41px; */
+}
+
+.mycustom {
+  left: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+  .a-goods{
+    width: 720rpx;
+    margin-left: 30rpx;
+    display: flex;
+    /*justify-content: space-between;*/
+    border-top: 1px solid #eee;
+    padding: 30rpx 30rpx 30rpx 0;
+}
+  .a-goods .img-box{
+    width: 160rpx;
+    height:160rpx;
+    overflow: hidden;
+    margin-right: 20rpx;
+    background-color: #d8d8d8;
+}
+
+ .img-box .img{
+    width: 160rpx;
+    height:160rpx;
+}
+  .a-goods .text-box{
+    width: 510rpx;
+    box-sizing: border-box;
+    padding-top: 10rpx;
+}
+  .btn-row{
+    width: 720rpx;
+    margin-left: 30rpx;
+    margin-right:30rpx;
+    border-top: 1rpx solid #eee;
+}
+.confirm-btn{
+    background:#ffffff;
+    border:1rpx solid #04ACD4;
+    border-radius:6rpx;
+    width:164rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    margin: 20rpx 30rpx 20rpx auto;
+    font-size:26rpx;
+    color:#04ACD4;
+    text-align:center;
+}
+.a-goods .text-box .arow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+.a-goods .text-box .arow .goods-name{
+     width: 360rpx;
+     font-size:26rpx;
+     height: 74rpx;
+     color:#000000;
+     line-height: 1.6;
+     overflow: hidden;
+ }
+.a-goods .text-box .arow01{
+    margin-bottom: 30rpx;
+}
+.a-goods .text-box .arow .goods-price{
+    font-size:26rpx;
+    color:#000000;
+    align-self: flex-start;
+}
+.a-goods .text-box .arow .goods-label{
+    font-size: 26rpx;
+    color: #999;
+}
+.a-goods .text-box .arow .goods-num{
+    font-size: 26rpx;
+    color: #999;
+}

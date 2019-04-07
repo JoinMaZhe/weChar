@@ -1,0 +1,22 @@
+<view class="page" style='margin-top:1rem;' xmlns:wx="http://www.w3.org/1999/xhtml">
+
+    <view class="page__bd">
+ 
+          <image src="{{src}}"></image>
+
+          <view style='text-align:center;'> <text>解约信息已提交</text></view>
+         <view style='text-align:center;color:#888888;'><text style='font-size:14px'>
+         解约申请已经提交，解约成功后会通知您。。。。。</text></view>
+          
+           <view class="weui-btn-area">
+            <button class="weui-btn" 
+            bindtap='iknow'
+            style='background-color:#3E9DFD;'
+                type="primary"
+                  data-id='{{id}}'
+                >知道了</button>
+           </view>
+           
+    </view>
+ 
+</view>

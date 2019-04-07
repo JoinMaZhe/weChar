@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的客户",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-field": "../../../vant/dist/field/index",
+    "van-dialog": "../../../vant/dist/dialog/index",
+    "van-button": "../../../vant/dist/button/index",
+    "wux-notice-bar": "../../../dist/notice-bar/index"
+  }
+}

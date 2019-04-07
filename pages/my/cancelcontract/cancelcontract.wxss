@@ -1,0 +1,140 @@
+/* pages/my/feedback/feedback.wxss */
+@import "../../../style/weui.wxss";
+
+page {
+background-color:#FFFFFF!important;
+
+}
+/*
+textarea {
+width:19rem!important;
+height:188px;
+display:block;
+position:relative;
+background: #ffffff;
+
+}*/
+.container {
+padding:0;
+font-size:17rpx;
+background:#ffffff;
+min-height: 100% !important;
+height: auto;
+}
+.page__bd{
+  margin-top: 20rpx;
+}
+.currentWordNumber{
+  font-size: 28rpx;
+  color: gray;
+  position: absolute;
+  left: 520rpx;
+  top: -6rpx;
+  margin-top: 40px;
+}
+
+.weui-cells {
+    margin-top: 1.17647059em!important;
+    background-color: #FFFFFF!important;
+    line-height: 1.47058824!important;
+    font-size: 17px!important;
+    overflow: hidden!important;
+    /* position: ; */
+}
+.weui-cell__bd{
+  width: 680rpx;
+  border: 2rpx solid #999999;
+  border-radius:3%;
+
+}
+.weui-textarea-counter{
+  font-size: 30rpx;
+
+}
+input {
+display:block;
+height:1.4rem;
+text-overflow:clip;
+overflow:hidden;
+white-space:nowrap;
+font-family:UICTFontTextStyleBody;
+min-height:1.4rem;
+
+}
+.weui-cells_form{
+  margin-top: 40rpx;
+}
+.weui-btn_primary {
+  background-color: #169BD5;
+}
+
+.weui-btn {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    line-height: 1.55555556;
+    border-radius: 5px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+
+
+
+.mycustom{
+  left: 0;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 100;
+
+}
+
+.hotword{
+    width: 4rem;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0.8rem;
+    font-size: 30rpx;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 70rpx;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+margin-left:1rem;
+border-radius: 30px;
+background-color:#999999;
+}
+.weui-textarea{
+  font-size: 36rpx;
+  color: #B2B2B2;
+}
+.weui-btn-area {
+margin-top: 120rpx;
+}
+button{
+  width: 670rpx;
+  height: 94rpx;
+}
+textarea{
+  height: 400rpx;
+}
+

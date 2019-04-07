@@ -1,0 +1,61 @@
+<!--pages/product/protectplan/analyze/index.wxml-->
+<view class="wraper">
+	<view class="sex-tit ">
+	 <image class="remind-img" src="/images/Group.png"></image>
+		<view class="kind-i" wx:if="{{remind}}">结果分析中</view>
+    <view class="kind-i" wx:else>结果分析完成</view>
+	</view>
+	<view class="sex-content">
+		<view class="sex-box sex-box-h">
+			<view class="analy-box analy-data ">
+				<view class="analy clearfix analy-data-tit">
+					<view class="sun fl">
+						<view class="border out"></view>
+						<view class="border in"></view>
+						<view class="border mid">1</view>
+					</view>
+					<view class="fl">数据匹配</view>
+				</view>
+				<view class="analy-text clearfix analy-data-con">
+					<span class="fl analy-con">正在对该年龄的意外伤害、重大 疾病、身故风险数据进行匹配…</span>
+				</view>
+			</view>
+			<view class="analy-box analy-model ">
+				<view class="analy clearfix analy-model-tit">
+					<view class="sun fl">
+						<view class="border out"></view>
+						<view class="border in"></view>
+						<view class="border mid">2</view>
+					</view>
+					<view class="fl">模型建立</view> 
+				</view>
+				<view class="analy-text clearfix analy-model-con">
+					
+					<span class="fl analy-con">
+          <image src="/images/math.png" class="mathimg"></image>
+          </span>
+				</view>
+			</view>
+			<view class="analy-box analy-math ">
+				<view class="analy clearfix analy-math-tit">
+					<view class="sun fl">
+						<view class="border out"></view>
+						<view class="border in"></view>
+						<view class="border mid">3</view>
+					</view>
+					<view class="fl">家庭最优方案计算</view>
+				</view>
+				<view class="analy-text clearfix analy-math-con">
+					
+					<span class="fl analy-con">%% 定义个体参数参数 %age=44; %sex=0;.....</span>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="begin-btn pa">
+		<view id="viewrisk" bindtap='toResult'>
+			<span class="begin-text" wx:if="{{remind}}">数据匹配中</span>
+      	<span class="begin-text" wx:else>查看结果</span>
+		</view>
+	</view>
+</view>

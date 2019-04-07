@@ -1,0 +1,103 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/article/list/list",
+    "pages/authorize/authorize",
+    "pages/discovery/discovery",
+    "pages/discovery/discovery3",
+    "pages/article/detial/detial",
+    "pages/product/list/list",
+    "pages/my/claims/claims",
+    "pages/product/detial/detial",
+    "pages/product/protectplan/index",
+    "pages/product/protectplan/analyze/index",
+    "pages/product/protectplan/result/index",
+    "pages/product/recommand/recommand",
+    "pages/product/compare/compare",
+    "pages/product/choose/choose",
+    "pages/product/premiumcalc/premiumcalc",
+    "pages/product/provision/provision",
+    "pages/career/career",
+    "pages/policyQuery/index",
+    "pages/policys/index",
+    "pages/my/my",
+    "pages/my/feedback/feedback",
+    "pages/my/information/information",
+    "pages/my/flow/flow",
+    "pages/my/map/index",
+    "pages/my/inputtips/input",
+    "pages/my/qrcode/index",
+    "pages/insure/index",
+    "pages/insure/insure",
+    "pages/order/index",
+    "pages/payment/index",
+    "pages/payment/payment",
+    "pages/payment/result/index",
+    "pages/my/mypolicy/policy",
+    "pages/my/collect/collect",
+    "pages/my/client/clientlist",
+    "pages/my/client/clientorder/clientorder",
+    "pages/my/mypolicy/policyinfo/policyinfo",
+    "pages/my/mypolicy/policycancellation/index",
+    "pages/my/onekeyrenewal/onekeyrenewal",
+    "pages/my/tobeadvisor/advisor",
+    "pages/my/tobeadvisor/examine/examine",
+    "pages/my/cancelcontract/cancelcontract",
+    "pages/my/cancelcontract/examine/examine",
+    "pages/my/myachievement/achievement",
+    "pages/my/informationdisclosure/informationdisclosure",
+    "pages/my/sellingareas/sellingareas",
+    "pages/search/index"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#04ACD4",
+    "navigationBarTitleText": "新奥保险服务",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#04ACD4",
+    "backgroundColor": "#F7F7F7 ",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/discovery/discovery",
+        "text": "首页",
+        "iconPath": "images/select.png",
+        "selectedIconPath": "images/select_focus.png"
+      },
+     
+      {
+        "pagePath": "pages/article/list/list",
+        "text": "锦囊",
+        "iconPath": "images/kits.png",
+        "selectedIconPath": "images/kits_focus.png"
+      },
+      {
+        "pagePath": "pages/product/protectplan/index",
+        "text": "规划",
+        "iconPath": "images/plan.png",
+        "selectedIconPath": "images/plan_focus.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_focus.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

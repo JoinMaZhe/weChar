@@ -1,0 +1,303 @@
+/* pages/discovery/discovery2.wxss */
+
+page {
+  background: #f7f8fa;
+}
+
+.top {
+  background-color: #fff;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.photoBg {
+  width: 750rpx;
+  height: 310rpx;
+}
+
+.photoBg image {
+  width: 750rpx;
+  height: 310rpx;
+  background-color: #fff;
+}
+
+.menu-wrp {
+  margin-top: 16rpx;
+  padding: 0 15px;
+  
+  background-color: #fff;
+  height: 310rpx;
+  border-radius: 3%;
+}
+
+.menu-list {
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  padding-bottom: 20rpx;
+  padding-top:20rpx;
+
+}
+.menu-wrp .bottom {
+  border-bottom: 1px dashed #eee;
+}
+
+
+.menu-wrp .right{
+   border-left: 1px dashed #eee;
+   padding-top:20rpx;
+  padding-bottom:20rpx;
+}
+.menu-wrp .left{
+   border-right: 1px dashed #eee;
+   padding-top:20rpx;
+  padding-bottom:20rpx;
+}
+
+
+.menu-img {
+  width: 67rpx;
+  height: 67rpx;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 5rpx;
+}
+
+.menu-desc {
+  color: #3b3b3b;
+  width: 100%;
+  height: 40rpx;
+  text-align: center;
+  display: block;
+  font-size: 24rpx;
+  font-family: PingFangSC-Light;
+}
+
+.rank__banner {
+  color: #fff;
+  padding: 0 15px;
+}
+
+.type-container {
+  width: 750rpx;
+  position: relative;
+  background-color: #fff;
+}
+
+.type-container .title{
+  padding-top:20rpx;
+   margin-left:20rpx;
+}
+
+.type-navbar {
+  white-space: nowrap;
+  background-color: #fff;
+  overflow: hidden;
+  overflow-x: hidden;
+  margin-left:10rpx;
+  margin-right:10rpx;
+  padding-right: 20rpx;
+
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.coupons-item {
+  position: relative;
+  width: 170rpx;
+  height: 80rpx;
+  margin: 10rpx;
+  padding-top: 20rpx;
+  padding-left: 15rpx;
+  padding-bottom: 20rpx;
+  background-color: #f3f3f3;
+  box-sizing: content-box;
+  font-size: 26rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  text-align: center;
+  color: rgb(10, 10, 10);
+  display: inline-block;
+  border-radius: 5%;
+}
+.icon{
+  position: absolute;
+  top:58rpx;
+  left: 0;
+  width: 60rpx;
+  height: 60rpx;
+}
+.txt{
+   text-align: center; 
+   line-height: 80rpx;
+}
+.amount{
+   font-size: 20rpx;
+   position: relative;
+   text-align: center; 
+   
+}
+.coupons-item .active{
+  line-height: 50rpx;
+}
+.active {
+  width: 250rpx;
+  color: #fff;
+  background: #04acd4;
+  border-radius: 5%;
+  /*background-image: linear-gradient(to top, #4abdcc, #51d7df);*/
+}
+
+.rank__list {
+  padding: 410rpx 1px 15px;
+}
+
+.rank__no {
+  width: 20rpx;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.m-poi {
+  position: relative;
+  border-bottom: 1px dashed #ddd;
+  padding:15rpx 0;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #4e4f54;
+}
+.rank__item--last {
+  border-bottom: 0;
+}
+
+.m-poi .cover {
+  width: 220rpx;
+  height: 130rpx;
+  border-radius: 8rpx;
+  float: left;
+  margin-right: 20rpx;
+  background-color: #e7ddc7;
+}
+
+.m-poi .label {
+  position: absolute;
+  left: 18rpx;
+  top: 45rpx;
+  width: 57rpx;
+  height: 57rpx;
+}
+
+.m-poi .info {
+  height: 190rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.m-poi .title {
+  font-size: 34rpx;
+  line-height: 34rpx;
+  font-weight: bold;
+  padding-top:35rpx;
+}
+
+.m-poi .rating {
+  font-size: 28rpx;
+  color: #5c5c5c;
+  line-height: 28rpx;
+  padding-top:15rpx;
+}
+
+.m-poi .m-rating {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.m-poi .rating .count {
+  margin-left: 10rpx;
+}
+
+.m-poi .desc {
+  color: #5c5c5c;
+  font-size: 24rpx;
+  margin-top: 5rpx;
+  line-height: 34rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.m-poi .detail {
+  color: #999;
+  bottom: 0;
+  left: 0;
+  font-size: 22rpx;
+}
+.van-rate {
+  margin-left: 15px;
+}
+.wux-prompt__bd {
+  padding-top: 30rpx;
+  text-align: center;
+  background-color:#ffffff;
+}
+.wux-prompt__icon {
+  width: 128rpx;
+  height: 128rpx;
+}
+.wux-prompt__title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin: 4rpx 0;
+}
+.wux-prompt__text {
+  font-size: 24rpx;
+  margin: 4rpx 0;
+}
+.swiper-container{
+  width: 750rpx;
+  position: relative;  
+  padding-top: 15px;
+}
+.swiper_box {
+  width: 100%;
+  height:300rpx;
+}
+
+swiper-item image {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  height:300rpx;
+}
+.swiper-container .dots{  
+  position: absolute;  
+  left: 0;  
+  right: 0;  
+  bottom: 20rpx;  
+  display: flex;  
+  justify-content: center;  
+}  
+.swiper-container .dots .dot{  
+  margin: 0 8rpx;  
+  width: 14rpx;  
+  height: 14rpx;  
+  background: #fff;  
+  border-radius: 50%;  
+  transition: all .6s;  
+  opacity: .5;
+}  
+.swiper-container .dots .dot.active{  
+  width: 14rpx;  
+  opacity: 1;
+}
+

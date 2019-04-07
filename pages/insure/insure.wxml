@@ -1,0 +1,496 @@
+<!--pages/insure/index.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <!--<input name="polNo" value="" hidden='true'/>-->
+    <input name="type" value="1" hidden='true' />
+    <input name="produceId" value="{{product.id}}" hidden='true' />
+    <input name="productName" value="{{product.name}}" hidden='true' />
+    <input name="insCpyCode" value="{{product.insureComCode}}" hidden='true' />
+    <input name="orderStatus" value="0" hidden='true' />
+    <input name="orderPayStatus" value="0" hidden='true' />
+    <input name="propoSalno" value="" hidden='true' />
+    <input name="insureEndTime" hidden='true' value="{{endDate}}" />
+    <input name="insureStarTtime" value="{{startDate}}" hidden='true' />
+    <view class="page__bd part1">
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="titles2">
+          <text>产品信息</text>
+        </view>
+        <view class="weui-form-preview__deital">
+          <view class="weui-form-preview__item view1">
+            <view class="weui-form-preview__label title"> 产品名称：{{product.name}}</view>
+          </view>
+          <view class="weui-form-preview__item view2">
+            <view class="weui-form-preview__label  view2">投保年龄：{{product.age}}
+            </view>
+          </view>
+          <view class="weui-form-preview__item view1">
+            <view class="weui-form-preview__label  "> 产品计划：{{product.planName}}
+            </view>
+          </view>
+          <view class="weui-form-preview__item view2">
+            <view class="weui-form-preview__label  ">生效日期：{{startDate}}
+            </view>
+          </view>
+          <view class="weui-form-preview__item  view1">
+            <view class="weui-form-preview__label ">结束日期：{{endDate}}
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class="page__bd">
+      <view class="titles2">
+        <text>投保人信息</text>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input" wx:if='{{ownerRule.applyName}}'>
+          <view class="weui-cell__hd">
+            <view class="weui-label">姓名</view>
+          </view>
+          <view class="weui-cell__bd" wx:if="{{pickers[index].name=='本人'}}">
+            <input bindblur='applyinputname' class="weui-input" name="applyName" value='{{applyVM.name}}' placeholder="请输入投保人姓名" />
+          </view>
+          <view class="weui-cell__bd" wx:else>
+            <input bindblur='applyinputname' class="weui-input" name="applyName" value='{{applyVM.name}}' placeholder="请输入投保人姓名" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input" wx:if='{{ownerRule.applyCardType}}'>
+          <view class="weui-cell__hd">
+            <view class="weui-label">证件类型</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker class="weui-input" name="applyCardType" bindchange="bindPickerChange3" value='{{index}}' range="{{picker2Range}}">
+              <view class="picker">
+                {{picker2Range[index]}}
+              </view>
+            </picker>
+
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input" wx:if='{{ownerRule.applyCard}}'>
+          <view class="weui-cell__hd">
+            <view class="weui-label">证件号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindblur='applycertcard' data-idx="{{index}}" name='applyCard' value='{{applyVM.certId}}' placeholder="请输入证件号" />
+          </view>
+        </view>
+         <view class="weui-cell weui-cell_input" wx:if='{{ownerRule.idValidDate}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">证件有效期</view>
+            </view>
+            <view class="weui-cell__bd" wx:if='{{validDateShow}}'>
+              <picker class="weui-input" data-index='{{index}}' bindchange="validDateTypeChange" value='{{validDateType}}' range="{{validDates}}">
+                <view class="picker">
+                  {{validDateType}}
+                </view>
+              </picker>
+            </view>
+            <view class="weui-cell__bd" wx:else>
+              <picker mode="date" value="{{validDate}}" name='idValidDate' start="2019-01-01" end="9999-09-01" data-index='{{index}}' bindchange="validDateChange">
+                <view class="weui-input">{{validDate}}</view>
+              </picker>
+            </view>
+            <input name='idValidDate' hidden='true' value='{{validDate}}'></input>
+          </view>
+        <view class="weui-cell weui-cell_input " wx:if='{{ownerRule.applyeTel}}'>
+          <view class="weui-cell__hd">
+            <view class="weui-label">手机号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name='applyeTel' value='{{applyVM.phone}}' bindblur='applyphonenum' placeholder="请输入手机号" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input" wx:if='{{ownerRule.applyEmail}}'>
+          <view class="weui-cell__hd">
+            <view class="weui-label">邮箱地址</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindblur='applyemailadd' value='{{applyVM.email}}' name='applyEmail' placeholder="请输入邮箱地址" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input" wx:if='{{ownerRule.address}}'>
+          <view class="weui-cell__hd">
+            <view class="weui-label">地址</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name='address' placeholder="请输入地址" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="page__bd">
+      <view class="{{productCode=='CP0031601' ? 'insure' : ''}}" wx:for="{{checkbox}}" wx:for-index="index">
+
+        <view class="titles2">
+          <text>被保人信息</text>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+        </view>
+
+        <view class="weui-cells weui-cells_after-title" data-idx='{{index}}'>
+
+          <view class="weui-cell weui-cell_input" wx:if='{{insureRule.applyRelationtype}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">与投保人关系 </view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker class="weui-input" name="type{{index+1}}" bindchange="bindPickerChange" value='{{pickers[index].value}}' range="{{picker1Range}}" data-idx="{{index}}">
+                <view class="picker">
+                  {{pickers[index].name}}
+                </view>
+              </picker>
+            </view>
+          </view>
+
+          <view class="weui-cell weui-cell_input " wx:if='{{insureRule.insureName}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">姓名</view>
+            </view>
+            <view class="weui-cell__bd">
+
+              <view wx:if="{{pickers[index].name=='本人'}}">
+                <input class="weui-input" name="insureName{{index+1}}" value="{{applyname}}" placeholder="请输入被保人姓名" bindblur='insureNameInput' />
+              </view>
+              <view wx:else>
+                <input class="weui-input" name="insureName{{index+1}}" placeholder="请输入被保人姓名" />
+              </view>
+
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input" wx:if='{{insureRule.insureCardType}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">证件类型</view>
+            </view>
+            <view class="weui-cell__bd">
+              <view wx:if="{{pickers[index].name=='本人'}}">
+                <picker class="weui-input" name="insureCardType{{index+1}}" bindchange="bindPickerChange2" value='{{applyCardType}}' range="{{picker3Range}}" data-idx="{{index}}">
+                  <view class="picker">
+                    {{picker3Range}}
+                  </view>
+                  <input class="weui-input" disabled='true' hidden='true' name='insureCardType{{index+1}}' value="{{picker3RangeValue}}" />
+                </picker>
+              </view>
+              <view wx:else>
+                <picker class="weui-input" name="insureCardType{{index+1}}" bindchange="bindPickerChange2" value='{{certs[index].value}}' range="{{picker2Range}}" data-idx="{{index}}">
+                  <view class="picker">
+                    {{certs[index].name}}
+                  </view>
+                </picker>
+              </view>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input " wx:if='{{insureRule.insureCard}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">证件号码</view>
+            </view>
+            <view class="weui-cell__bd" data-value="{{certs[index].value=='120001'||pickers[index].name=='本人'}}">
+              <block wx:if="{{pickers[index].name=='本人'}}">
+                <input class="weui-input" bindblur='insurecardInput' data-idx="{{index}}" name="insureCard{{index+1}}" value="{{applyVM.certId}}" placeholder="请输入证件号码" />
+              </block>
+              <block wx:else>
+                <input class="weui-input" data-idx="{{index}}" name="insureCard{{index+1}}" placeholder="请输入证件号码" />
+              </block>
+
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input " wx:if='{{insureRule.insureTel}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">手机号</view>
+            </view>
+            <view class="weui-cell__bd" data-idx="{{index}}">
+              <view wx:if="{{pickers[index].name=='本人'}}">
+                <input class="weui-input" name='insureTel{{index+1}}' bindblur='insureTelInput' value='{{applyphone}}' placeholder="请输入手机号" />
+              </view>
+              <view wx:else>
+                <input class="weui-input" name="insureTel{{index+1}}" placeholder="请输入手机号" />
+              </view>
+            </view>
+          </view>
+
+
+          <view class="weui-cell weui-cell_input" wx:if='{{insureRule.insureBirthday}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">生日</view>
+            </view>
+            <view class="weui-cell__bd">
+              <block wx:if="{{picker3RangeValue=='120001'&& pickers[index].name=='本人' }}">
+
+                <picker mode="date" disabled='true' value="{{date[0]}}" start="1959-09-01" end="3018-09-01" data-idx="{{index}}" bindchange="bindDateChange">
+
+                  <input class="weui-input" disabled='true' name="insureBirthday{{index+1}}" placeholder="1998-01-01" value='{{applyVM.applyBirthday}}'> {{dates[index]}}
+                  </input>
+                </picker>
+              </block>
+              <block wx:else>
+                <picker mode="date" value="{{dates[index]}}" start="1959-09-01" end="3018-09-01" data-idx="{{index}}" bindchange="bindDateChange">
+
+                  <input class="weui-input" name="insureBirthday{{index+1}}" value="{{dates[index]}}"> {{dates[index]}}
+                  </input>
+                </picker>
+              </block>
+
+            </view>
+          </view>
+
+          <view class="weui-cell weui-cell_input " wx:if='{{insureRule.insureSex}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">性别</view>
+            </view>
+            <view class="weui-cell__bd">
+              <radio-group class="radio-group" name='insureSex{{index+1}}' bindchange="radioChange">
+                <block data-idx="{{index}}" wx:if="{{picker3RangeValue=='120001'&& pickers[index].name=='本人' }}">
+                  <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+                    <radio disabled='true' class="" name="insureSex{{index+1}}" value="{{item.value}}" checked="{{item.checked}}" />
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                  </label>
+                </block>
+                <block wx:else>
+                  <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+                    <radio class="" name="insureSex{{index+1}}" value="{{item.value}}" checked="{{item.checked}}" />
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                  </label>
+                </block>
+              </radio-group>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input " wx:if='{{insureRule.socialFlag}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">有无社保</view>
+            </view>
+            <view class="weui-cell__bd">
+              <radio-group class="radio-group" name='socialFlag{{index+1}}' bindchange="radioChange2">
+                <label class="weui-cell weui-check__label" wx:for="{{radioItems2}}" wx:key="value">
+                  <radio class="" value="{{item.value}}" checked="{{item.checked}}" name='' />
+                  <view class="weui-cell__bd " name="socialFlag{{index+1}}">{{item.name}}</view>
+                </label>
+              </radio-group>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input" wx:if='{{insureRule.jobUnitName}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">工作单位</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="jobUnitName{{index+1}}" placeholder="请输入工作单位" />
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input " wx:if='{{insureRule.location}}'>
+            <view class="weui-cell__hd">
+              <view class="weui-label">地址</view>
+            </view>
+            <view class="weui-cell__bd">
+              <view class="section" style='height:2.58823529em;min-height:2.58823529em;line-height:2.58823529em;'>
+                <picker mode="region" bindchange="bindRegionChange" name="location{{index+1}}" value="{{regioncode}}" custom-item="{{customItem}}">
+                  <view class="picker">
+                    {{region[0]}} {{region[1]}} {{region[2]}}
+                  </view>
+                </picker>
+              </view>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input" wx:if='{{insureRule.occupation}}'>
+
+            <view class="weui-cell__hd">
+              <view class="weui-label">职业工种 </view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" bindinput='onConfirm' placeholder="请输入要搜索的职业" />
+            </view>
+            <view class="weui-cell__bd">
+              <picker class="weui-input" name="occupation{{index+1}}" bindchange="bindPickerWorkChange" value='{{occupation}}' range="{{worktypefilter}}">
+                <view class="picker">
+                  {{worktypefilter[worktypeindex]}}
+                </view>
+              </picker>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{product.maxInsuredCount==product.minInsuredCount}}"></view>
+      <view wx:else>
+
+        <view class=" weui-flex addform" hidden='{{addinsure}}'>
+          <view class="weui-flex__item" bindtap="insert" data-idx="{{index}}">
+            <button disabled='{{addButton}}' class="weui-btn weui-btn_mini weui-btn_primary  btn_payment">
+              新增被保人</button>
+          </view>
+          <view class="weui-flex__item" bindtap="reset">
+            <button disabled='{{resetButton}}' class="weui-btn weui-btn_mini weui-btn_primary btn_renewal">
+              取消新增</button>
+          </view>
+        </view>
+
+      </view>
+      <view>
+      </view>
+    </view>
+    <view class="page__bd">
+      <view class="titles2">
+        <text>保单信息</text>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-form-preview__item benefit">
+          <view class="weui-form-preview__label title"> 保单类型：</view>
+          <view class="btn-row">
+            <view style="float:right;" class="confirm-btn {{taxPayerReceipt===taxPayerReceipts[0]?'active':''}}" data-type='{{taxPayerReceipts[0]}}' bindtap='getTaxPayerReceipt'>纸质</view>
+            <view style="float:right;" class="confirm-btn {{taxPayerReceipt===taxPayerReceipts[1]?'active':''}}" data-type='{{taxPayerReceipts[1]}}' bindtap='getTaxPayerReceipt'>电子</view>
+          </view>
+        </view>
+        <input name='isElectronic' hidden='true' value='{{taxPayerReceipt}}'></input>
+      </view>
+    </view>
+    <view class="page__bd" wx:if='{{ownerRule.benefitType}}'>
+      <view class="titles2">
+        <text>受益人信息</text>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-form-preview__item benefit">
+          <view class="weui-form-preview__label title"> 身故受益人：</view>
+          <view class="btn-row">
+            <view style="float:right;" class="confirm-btn {{benefit_type==='02'?'active':''}}" data-type='02' bindtap='getBenefitType'>指定</view>
+            <view style="float:right;" class="confirm-btn {{benefit_type==='01'?'active':''}}" data-type='01' bindtap='getBenefitType'>法定</view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{benefit_type==='02'}}">
+        <view class='add-benefit' wx:for="{{benefit_mount}}" wx:for-index="index" data-index='{{index}}'>
+          <view style='padding-top:10rpx;' class='' wx:if="{{index!=0}}">
+            <wux-icon type="ios-remove-circle-outline" color='#04acd4' wx:if="{{index!=0}}" bindtap='removeBenefit' />
+          </view>
+          <view style='padding-top:10rpx;' class='add-icon' wx:else>
+          </view>
+          <view class="weui-cells weui-cells_after-title add-input">
+            <view class="weui-form-preview__item benefit">
+              <view class="weui-form-preview__label title"> 与被保人关系：</view>
+              <view class="btn-row-type">
+                <view style="float:right;" wx:for="{{benefit_relations}}" wx:for-index="idx" wx:for-item="item" data-current='{{currentNavtabs[index]}}' class="confirm-btn {{currentNavtabs[index]==idx?'active':''}}" data-relation='{{item.value}}' data-index='{{index}}'
+                  data-idx="{{idx}}" bindtap='getBenefitRel'>{{item.name}}</view>
+                <input name='relation{{index+1}}' hidden='true' value='{{relations[index].value}}'></input>
+                <!-- <view style="float:right;"  class="confirm-btn {{benefit_relation==='02'?'active':''}}" data-relation='02' bindtap='getBenefitRel'>父母</view>
+                <view style="float:right;" class="confirm-btn {{benefit_relation==='01'?'active':''}}" data-relation='01' bindtap='getBenefitRel'>子女</view>
+                <view style="float:right;" class="confirm-btn {{benefit_relation==='03'?'active':''}}" data-relation='03' bindtap='getBenefitRel'>配偶</view> -->
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">姓名</view>
+              </view>
+              <view class="weui-cell__bd">
+                <input class="weui-input" name="name{{index+1}}" placeholder="请输入受益人姓名" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">证件类型</view>
+              </view>
+              <view class="weui-cell__bd">
+                <picker class="weui-input" name="identifyType{{index+1}}" data-index='{{index}}' bindchange="bindIdentifyTypeChange" value='{{identifyTypes[index].value}}' range="{{picker2Range}}">
+                  <view class="picker">
+                    {{identifyTypes[index].name}}
+                  </view>
+                </picker>
+
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">证件号</view>
+              </view>
+              <view class="weui-cell__bd">
+                <input class="weui-input" name='identifyNumber{{index+1}}' placeholder="请输入证件号" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_input ">
+              <view class="weui-cell__hd">
+                <view class="weui-label">手机号</view>
+              </view>
+              <view class="weui-cell__bd">
+                <input class="weui-input" name='benefitPhone{{index+1}}' placeholder="请输入手机号" />
+              </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">性别</view>
+              </view>
+              <view class="weui-cell__bd">
+                <radio-group class="radio-group" style='padding-left:165rpx;' name='sex{{index+1}}' bindchange="radioChange">
+                  <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+                    <radio class="" name="sex{{index+1}}" value="{{item.value}}" checked="{{item.checked}}" />
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                  </label>
+                </radio-group>
+              </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">出生日期</view>
+              </view>
+              <view class="weui-cell__bd">
+                <picker mode="date" value="{{date_benefits[index]}}" name='birthDay{{index+1}}' start="1900-01-01" end="9999-01-01" data-index='{{index}}' bindchange="bindDateChange2">
+                  <view class="weui-input">{{date_benefits[index]}}</view>
+                </picker>
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">受益顺序</view>
+              </view>
+              <view class="weui-cell__bd">
+                <picker class="weui-input" data-index='{{index}}' name="orderNo{{index+1}}" bindchange="pickerRangeBenifitChange" value='{{pickerRangeBenifitsValue[index]}}' range="{{pickerRangeBenifit}}">
+                  <view class="picker">
+                    {{pickerRangeBenifits[index]}}
+                  </view>
+                </picker>
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">受益比例</view>
+              </view>
+              <view class="weui-cell__bd">
+                <picker class="weui-input" data-index='{{index}}' name="benifitPercent{{index+1}}" bindchange="pickerRangeBenifitRate" value='{{pickerRangeBenifitRates[index]}}' range="{{pickerRangeBenifitRate}}">
+                  <view class="picker">
+                    {{pickerRangeBenifitRates[index]}}
+                  </view>
+                </picker>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='add' wx:if="{{benefit_type==='02'&&benefit_mount.length<5}}" bindtap='addBenefit'>
+        <view style='padding-top:10rpx;'>
+          <wux-icon type="ios-add-circle-outline" color='#04acd4' />
+        </view>
+        <view class='' style='padding-left:10rpx;'>新增受益人</view>
+      </view>
+
+    </view>
+    <view class="agree_page">
+      <icon class="agree_icon" wx:if="{{isAgree}}" bindtap="bindCheckbox" type="success_circle" size="20" />
+      <icon class="agree_icon" wx:else type="circle" size="20" bindtap="bindCheckbox" />
+      <view class="page__ft">
+        本人已充分理解并同意
+        <block wx:for="{{urllist}}" wx:for-item="item">
+          <view class='base-color' data-url='{{item.url}}' data-type="pdf" catchtap='downloadFile'>{{item.name}}</view>
+        </block>
+        的全部内容
+      </view>
+    </view>
+    <view class="page__bd">
+      <view class="bottom-insure">
+        <!--style="{{item.checked?'color:red;':'color:#bfbfbf;'}}"-->
+        <button style="{{isAgree?'background-color:#04ACD4;':'background-color:#bfbfbf;'}}" class="insurebutton" form-type="submit" data-id='{{id}}'>保费试算</button>
+      </view>
+    </view>
+  </form>
+</view>

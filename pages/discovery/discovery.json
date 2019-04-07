@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "新奥保险服务",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "wux-rater": "../../../dist/rater/index",
+    "wux-prompt": "../../../dist/prompt/index",
+    "wux-notice-bar": "../../../dist/notice-bar/index",
+    "wux-fab-button": "../../../dist/fab-button/index",
+    "van-field": "../../../vant/dist/field/index",
+    "van-dialog": "../../../vant/dist/dialog/index",
+    "van-button": "../../../vant/dist/button/index"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "van-field": "../../../vant/dist/field/index",
+    "van-dialog": "../../../vant/dist/dialog/index",
+    "van-button": "../../../vant/dist/button/index",
+    "wux-notice-bar": "../../../dist/notice-bar/index"
+  }
+}

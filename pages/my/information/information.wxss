@@ -1,0 +1,84 @@
+/* pages/my/information.wxss */
+@import "../../../style/weui.wxss";
+
+page {
+  height: 100%;
+}
+
+.my_signinfo {
+  margin-top: 2rem;
+  margin: 0rpx 20rpx 20rpx;
+  background-color: #fff;
+  border-color: #d9d9d9;
+  border-style: solid;
+  border: none;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  border-radius: 9px;
+  left: 0.5rem;
+  right: 0.5rem;
+  top: 0.8rem;
+}
+
+.weui-cell_input {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 16px;
+  color: #888;
+}
+
+/* .user {
+  width: 750rpx;
+  height: 260rpx;
+  background: #ffffff;
+  padding: 20rpx 350rpx 10rpx 310rpx;
+} */
+
+.weui-vcode-btn {
+  padding: 0 0.1em 0 0.3em;
+}
+
+.top {
+  background-color: #fff;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.photoBg {
+  width: 750rpx;
+  height: 210rpx;
+}
+
+.photoBg image {
+  width: 750rpx;
+  height: 210rpx;
+  background-color: #fff;
+}
+
+.user {
+  padding: 0rpx 38%;
+}
+
+.user .userinfo-avatar {
+  flex: 1;
+  display: inline-block;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
+}
+
+.user .user-info {
+  flex: 5;
+  text-align: left;
+}
+
+.user .user-info text {
+  display: block;
+}
+
+.weui-cell__hd {
+  font-size: 30rpx;
+  color: #999;
+}

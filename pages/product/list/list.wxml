@@ -1,0 +1,118 @@
+<!--pages/product/list/list.wxml-->
+  <view class="" style="background:#04ACD4">
+    <wux-search-bar value="{{ value }}" clear controlled placeholder="Search" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
+  </view>
+  <view class="top-tab flex-wrp flex-tab ">
+    <view class="page__bd">
+      <wux-filterbar items="{{ items }}" bind:change="onChange" bind:open="onOpen" bind:close="onClose" />
+      <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__bd">
+          <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{ repos }}" wx:key="">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <image class="weui-media-box__thumb" src="{{ item.owner.avatar_url }}" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view class="weui-media-box__title">{{ item.name }}</view>
+              <view class="weui-media-box__desc">{{ item.description }}</view>
+              <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta">forks: {{ item.forks_count }}</view>
+                <view class="weui-media-box__info__meta">stars: {{ item.stargazers_count }}</view>
+                <view class="weui-media-box__info__meta">date: {{ item.date }}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+<view wx:if='{{list.length>0}}' hidden='{{!showHidden}}' >
+  <view scroll-y="true" class="container discovery withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class="ctnt0">
+      <block wx:for="{{list}}" wx:for-item="item">
+        <view class="feed-item" hidden='{{item.hidden}}'>
+          <view class="weui-form-preview__deital">
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label title">{{item.shortName}}</view>
+              <view class="weui-form-preview__value">{{item.insuranceCompany.fullName}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <block wx:for="{{item.coverageTerms}}" wx:for-item="item">
+                <view class="weui-form-preview__label  view2">保障期限：{{item.label}}</view>
+              </block>
+
+            </view>
+            <view class="weui-form-preview__item liability " wx:for="{{item.onePlanLiability}}">
+              <view class="weui-form-preview__label">{{item.liabilityName}}</view>
+              <view class="weui-form-preview__value"> {{item.amount}}</view>
+            </view>
+          </view>
+          <view class="foot">
+            <!-- <view wx:if="{{item.price==-1}}"　class="weui-form-preview__label">保费试算后可见</view>
+          <view class="good_num" wx:else >¥{{item.price}} 元起 </view>-->
+            <view wx:if="{{item.price==-1}}" class="weui-form-preview__label" style="font-size:26.4rpx;margin: 30rpx 0rpx ">保费试算后可见</view>
+            <view wx:else class="good_num">{{item.price}}元起</view>
+            <view bindtap="bindItemTap" data-id="{{item.id}}" data-url="{{item.pictureUrl}} " data-code="{{item.code}}" class="btn_default">
+              <image src="../../../images/product.png"></image>
+            </view>
+          </view>
+          <view>
+
+          </view>
+        </view>
+
+      </block>
+    </view>
+
+  </view>
+</view>
+<view  hidden='{{showHidden}}'>
+  <van-collapse value="{{ active3 }}" data-key="active3" bind:change="onChange2" >
+    <van-collapse-item content-class="van-collapse-item__content" wx:for='{{insuranceCompanyList}}'>
+      <view slot="title" class='insuranceCompany'>
+        <image mode='aspectFit'  style='' src="{{imgurl+item.photo}}"></image> 
+        <view class='insuranceCompanyName'>{{item.name}}</view>
+        <van-icon name="question" custom-class="van-icon-question" />
+      </view>
+      <view scroll-y="true" class="container discovery withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="ctnt0">
+          <block wx:for="{{item.products}}" wx:for-item="item">
+            <view class="feed-item">
+              <view class="weui-form-preview__deital">
+                <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label title">{{item.shortName}}</view>
+                  <view class="weui-form-preview__value">{{item.insuranceCompany.fullName}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                  <block wx:for="{{item.coverageTerms}}" wx:for-item="item">
+                    <view class="weui-form-preview__label  view2">保障期限：{{item.label}}</view>
+                  </block>
+
+                </view>
+                <view class="weui-form-preview__item liability " wx:for="{{item.onePlanLiability}}">
+                  <view class="weui-form-preview__label">{{item.liabilityName}}</view>
+                  <view class="weui-form-preview__value"> {{item.amount}}</view>
+                </view>
+              </view>
+              <view class="foot">
+                <!-- <view wx:if="{{item.price==-1}}"　class="weui-form-preview__label">保费试算后可见</view>
+          <view class="good_num" wx:else >¥{{item.price}} 元起 </view>-->
+                <view wx:if="{{item.price==-1}}" class="weui-form-preview__label" style="font-size:26.4rpx;margin: 30rpx 0rpx ">保费试算后可见</view>
+                <view wx:else class="good_num">{{item.price}}元起</view>
+                <view bindtap="bindItemTap" data-id="{{item.id}}" data-url="{{item.pictureUrl}} " data-code="{{item.code}}" class="btn_default">
+                  <image src="../../../images/product.png"></image>
+                </view>
+              </view>
+              <view>
+
+              </view>
+            </view>
+
+          </block>
+        </view>
+
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+
+</view>

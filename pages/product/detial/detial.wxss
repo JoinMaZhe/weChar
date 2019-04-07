@@ -1,0 +1,283 @@
+/* pages/insure/index.wxss */
+@import "../../../style/weui.wxss";
+.page {
+  background-color: #f2f2f2;
+  width: 100%;
+  font-family: PingFangSC-Regular;
+  padding-bottom: 100rpx;
+  min-height: 100%;
+}
+
+.features {
+  background: #fff;
+}
+
+.features  image {
+  width: 100%;
+  
+  background-color: #fff;
+  padding-top: 10rpx;
+  border-style:none;vertical-align:top
+}
+
+.dutyDetails {
+  display: block;
+  line-height: 60rpx;
+  white-space: pre-wrap;
+  padding: 0 35rpx;
+  
+}
+
+.base-color {
+  color: #1d50a2;
+}
+
+.row-arrow {
+  width: 100%;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 28rpx;
+  line-height: 102rpx;
+  background: #fff;
+  background-size: 18rpx auto;
+}
+
+.page__ft {
+  margin: 0.35rem 0 0.3rem;
+  padding-left: 0.2rem;
+  color: #666;
+  display: flex;
+  width:100%;
+}
+
+.enn-button {
+  width: 175rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-block;
+  color: #93a7e7;
+  position: relative;
+  padding: 0 25rpx;
+  border: 1px solid #93a7e7;
+  margin-right: 20rpx;
+}
+
+.goods-info {
+  background-color: #fff;
+  padding: 35rpx 0;
+  margin-bottom: 20rpx;
+  width: 100%;
+  position: relative;
+  display: block;
+  padding-bottom: 60rpx;
+}
+
+.goods-info-fx {
+  position: absolute;
+  width: 110px;
+  height: 60px;
+  right: 0;
+  top: 0;
+}
+.goods-info-fx image {
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 10px 10px 0 5px;
+}
+.goods-info .goods-title {
+  box-sizing: border-box;
+  padding: 0 35rpx;
+  font-size: 32rpx;
+  line-height: 1.4;
+  color: #000;
+  margin-bottom: 28rpx;
+  padding-right: 60px;
+}
+.goods-info .goods-price {
+  box-sizing: border-box;
+  color: #e64340;
+  font-size: 28rpx;
+  font-weight: bold;
+  width: 30%;
+}
+
+.goods-detial {
+  box-sizing: border-box;
+  color: #e64340;
+  font-size: 28rpx;
+  padding-left: 35rpx;
+  font-weight: bold;
+  /*width: 30%;*/
+  float: left;
+}
+.title {
+  width: 100%;
+  color: #000;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  padding-left: 30rpx;
+  padding-top: 25rpx;
+  height: 60rpx;
+  line-height: 40rpx;
+}
+.weui-form-preview__item {
+  width: 100%;
+  height: 60rpx;
+  padding-left: 30rpx;
+  font-size: 24rpx;
+  color: #999;
+  padding-top: 25rpx;
+  line-height: 40rpx;
+}
+
+.weui-cell__hd {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.weui-cell__bd {
+  font-size: 30rpx;
+  color: #d8d8d8;
+}
+
+.weui-check__label {
+  font-size: 30rpx;
+  color: #d8d8d8;
+}
+
+.weui-cell-navigator {
+  display: flex;
+}
+
+.liability {
+  padding: 2px 5px;
+  display: flex;
+}
+.header {
+  width: 100%;
+  height: 108rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.nav {
+  display: inline-block;
+  margin: 15rpx 15rpx 15rpx 15rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.nav view {
+  color: #666;
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  padding: 0 25rpx;
+  border-radius: 30.5rpx;
+  border: 0px solid #ccc;
+  margin-left: 20rpx;
+}
+
+.nav .active {
+  color: #fff;
+  background: #04acd4;
+  border-radius: 30.5px;
+  border: 0px solid #04acd4;
+  /*background-image: linear-gradient(to top, #4abdcc, #51d7df);*/
+}
+.weui-cell__bd {
+  color: #666;
+  font-size: 30rpx;
+}
+.weui-cell__ft {
+  color: #666;
+  font-size: 30rpx;
+}
+.weui-form-preview__ft {
+  position: relative;
+  line-height: 18px !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.detail-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100rpx;
+}
+
+.button-red {
+  background-color: #04acd4; /* 红色 */
+}
+
+button {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30rpx;
+  border-radius: 0rpx;
+  width: 100%;
+  height: 100%;
+  line-height: 100rpx;
+}
+
+.detail-nav image {
+  width: 70rpx;
+  height: 50rpx;
+  margin: 20rpx 100rpx;
+}
+
+.line_nav {
+  width: 5rpx;
+  height: 100%;
+  background-color: gainsboro;
+}
+text {
+  display: block;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+.insure_nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+  background-color: #fff;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100rpx;
+}
+.version {
+  background-color: #fff;
+  height: 40rpx;
+  width: 50%;
+	line-height: 40rpx;
+	font-size: 28rpx;
+	/*text-align: center;  */
+  padding: 40rpx 10rpx;
+}

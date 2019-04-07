@@ -1,0 +1,159 @@
+<!--pages/my/my.wxml-->
+
+<view class="page ">
+  <wux-notice-bar mode="closable" loop icon='../../images/horn.png'>
+    为方便您的信息显示完全，请及时完善我的信息
+  </wux-notice-bar>
+  <view class="top " style='position:relaitve;'>
+    <view class="photoBg" style='position:absolute; z-index:2; width:750rpx; height:210rpx;left:0px; top:0px; '>
+      <image src="../../images/photo.png" mode="cover"></image>
+    </view>
+
+    <view class=" user userinfo" style='position:absolute; z-index:3; width:750rpx; height:260rpx; left:0px;; top:75rpx;background-color: transparent;'>
+
+      <image class="userinfo-avatar" wx:if="{{userInfo && userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <block wx:else>
+        <image class="userinfo-avatar" src="../../images/icon1.jpeg" mode="cover"></image>
+        <!--<text class="userinfo-nickname">{{userInfo.nickName}}</text>-->
+      </block>
+
+    </view>
+  </view>
+
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+
+      <navigator url="../../../../my/mypolicy/policy" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="../../images/policy.png"></image>
+        </view>
+        <view class="weui-cell__bd">我的保单</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+
+      <navigator url="../../../../my/tobeadvisor/advisor" class="weui-cell weui-cell_access" hover-class="weui-cell_active" hidden='{{!showhidden}}'>
+        <view class="weui-cell__hd">
+          <image src="../../images/advisor.png"></image>
+        </view>
+        <view class="weui-cell__bd">成为会员</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+
+
+      <navigator url="../../../../my/client/clientlist" class="weui-cell weui-cell_access" hover-class="weui-cell_active" hidden='{{showhidden}}'>
+        <view class="weui-cell__hd">
+          <image src="../../images/client.png"></image>
+        </view>
+        <view class="weui-cell__bd">我的客户</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+
+
+      <navigator url="../../../../my/information/information" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+
+          <image src="../../images/account.png"></image>
+
+        </view>
+        <view class="weui-cell__bd">我的信息</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="../../../../my/collect/collect" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="../../images/collect.png"></image>
+        </view>
+        <view class="weui-cell__bd">我的收藏</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+
+
+      <!--<navigator url="../../../../my/flow/flow" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="../../images/2.png"></image>
+        </view>
+        <view class="weui-cell__bd">我的银行卡</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+     -->
+
+      <navigator url="../../../../my/myachievement/achievement" class="weui-cell weui-cell_access" hover-class="weui-cell_active" hidden='{{showhidden}}'>
+        <view class="weui-cell__hd">
+          <image src="../../images/flow.png"></image>
+        </view>
+        <view class="weui-cell__bd">我的业绩</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <view bindtap='call' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="../../images/call.png"></image>
+        </view>
+        <view class="weui-cell__bd">经纪客服</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+      <navigator url="../../../../my/qrcode/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="../../images/qrcode.png"></image>
+        </view>
+        <view class="weui-cell__bd">我的分享</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="../../../../my/informationdisclosure/informationdisclosure" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="../../images/3.png"></image>
+        </view>
+        <view class="weui-cell__bd">信息披露</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="../../../../my/sellingareas/sellingareas" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="../../images/sellingarea.png"></image>
+        </view>
+        <view class="weui-cell__bd">营业厅</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="../../../../my/map/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="../../images/location.png"></image>
+        </view>
+        <view class="weui-cell__bd">我的位置</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+
+      </navigator>
+      <navigator url="../../../feedback/feedback" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+
+          <image src="../../images/feedback.png"></image>
+
+        </view>
+        <view class="weui-cell__bd">意见与建议</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+
+    </view>
+  </view>
+
+
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <text>代理人登录</text>
+    <!-- <image  src="../../../images/icon1.jpeg" style='width:80rpx;height:80rpx;'  />-->
+    <input bindinput='iPhoneNum' type='text' placeholder="请输入手机号..." auto-focus/>
+    <input bindinput='iPassWord' type='number' placeholder="请输密码..." />
+
+    <!--  <button bindtap="confirmM">确定</button>-->
+  </view>
+  <van-dialog use-slot async-close show="{{ show }}" show-cancel-button bind:close="onClose" bind:onConfirm="onClose">
+    <van-field value="{{ username }}" label="手机号" placeholder="请输入手机号" bind:change="onChange1" />
+    <van-field value="{{ password }}" type="password" label="密码" :border="false" placeholder="请输入密码" bind:change="onChange2" />
+  </van-dialog>
+
+
+</view>
+<view class='wx_foot'>
+  <view class="wx-button" catchtap="onTap" data-type='{{type}}' >
+    <image class="wx_img" src="../../images/agent.png" />
+    <view class="foot_txt" wx:if='{{type==="login"}}' >登录</view>
+    <view class="foot_txt" wx:else>退出登录</view>
+  </view>
+</view>

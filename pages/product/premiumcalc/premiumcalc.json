@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "人身险保费评估",
+  "usingComponents": {
+    "wux-cell-group": "../../../dist/cell-group/index",
+    "wux-cell": "../../../dist/cell/index",
+    "wux-select": "../../../dist/select/index",
+    "wux-checkbox-group": "../../../dist/checkbox-group/index",
+    "wux-checkbox": "../../../dist/checkbox/index",
+    "wux-icon": "../../../dist/icon/index"
+  }
+}

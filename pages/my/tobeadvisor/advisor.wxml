@@ -1,0 +1,318 @@
+<!--pages/insure/index.wxml-->
+<view class="page" style='margin-top:1rem;' xmlns:wx="http://www.w3.org/1999/xhtml">
+
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <!--<input name="polNo" value="" hidden='true'/>-->
+
+    <view class="page__bd">
+      <view class="titles2">
+        <text>     </text>
+      </view>
+      
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">姓名</view>
+          </view>
+          <view class="weui-cell__bd">
+           <input bindblur='applyname'
+            class="weui-input" name="applyName"
+             placeholder="请输入投保人姓名" />
+          </view>
+        </view>
+  
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">身份证号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindblur='applycertcard' name='applyCard' placeholder="请输入身份证号" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">手机号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name='applyeTel' bindblur='' placeholder="请输入手机号" />
+          </view>
+        </view>
+
+      
+      <!-- <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">开户行名称</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name='applybankname' bindblur='' placeholder="请输入开户行的名称" />
+          </view>
+      </view>
+      
+      <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">具体支行</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name='applybankbranch' bindblur='' placeholder="请输入具体支行" />
+          </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">银行卡号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name='applybanknum' bindblur='applybanknum' placeholder="请输入银行卡号" />
+          </view>
+      </view> -->
+
+
+     
+
+
+
+
+       <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">民族</view>
+          </view>
+          <view class="weui-cell__bd">
+          <view  class="section" style='height:2.58823529em;min-height:2.58823529em;line-height:2.58823529em;'>
+               <picker bindchange="bindPickerChange" name='nation' value="{{index}}" range="{{nation}}">
+                  <view class="picker">
+                  {{nation[index]}}
+                     </view>
+                </picker>
+            </view>
+           </view>
+        </view>
+
+       <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">最高学历</view>
+          </view>
+          <view class="weui-cell__bd">
+          <view  class="section" style='height:2.58823529em;min-height:2.58823529em;line-height:2.58823529em;'>
+               <picker bindchange="bindPickerChangeedu" name='eduheight' value="{{index2}}" range="{{eduHight}}">
+                  <view class="picker">
+                   {{eduHight[index2]}}
+                     </view>
+                </picker>
+            </view>
+           </view>
+        </view>
+
+       
+       <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">政治面貌</view>
+          </view>
+          <view class="weui-cell__bd">
+          <view  class="section" style='height:2.58823529em;min-height:2.58823529em;line-height:2.58823529em;'>
+               <picker bindchange="bindPickerChangepolitical" name='political' 
+               value="{{index3}}" range="{{politicalStatus}}">
+                  <view class="picker">
+                  {{politicalStatus[index3]}}
+                     </view>
+                </picker>
+            </view>
+           </view>
+        </view>
+
+
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">性别</view>
+          </view>
+          <radio-group class="radio-group" name='insureSex' bindchange="radioChange">
+            <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+              <radio class="" name="insureSex{{index+1}}" value="{{item.value}}" checked="{{item.checked}}" />
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+          </radio-group>
+        </view>
+
+
+       <!-- <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">服务定位</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view  class="section" style='height:2.58823529em;min-height:2.58823529em;line-height:2.58823529em;'>
+                <picker mode="region" bindchange="bindRegionChange"
+                  name="servicelocation"  value="{{region}}" custom-item="{{customItem}}">
+                <view class="picker" >
+                   {{region[0]}} {{region[1]}} {{region[2]}}             
+                </view>
+                </picker>
+            </view>
+           </view>
+        </view>
+
+
+
+        
+       <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">工作性质</view>
+          </view>
+          <view class="weui-cell__bd">
+          <view  class="section" style='height:2.58823529em;min-height:2.58823529em;line-height:2.58823529em;'>
+               <picker bindchange="bindWorkChange" name='workkind' value="{{index4}}" range="{{workkind}}">
+                  <view class="picker">
+                  {{workkind[index4]}}
+                     </view>
+                </picker>
+            </view>
+           </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">证书类型</view>
+          </view>
+          <view class="weui-cell__bd">
+          <view  class="section" style='height:2.58823529em;min-height:2.58823529em;line-height:2.58823529em;'>
+               <picker bindchange="bindLicenseChange" name='licensetype' value="{{index5}}" range="{{licensetype}}">
+                  <view class="picker">
+                  {{licensetype[index5]}}
+                     </view>
+                </picker>
+            </view>
+           </view>
+        </view>
+
+
+     <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">证书编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name='applylicensenum' bindblur='applylicensenum' placeholder="请输入证书编号" />
+          </view>
+      </view>
+
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">证书起期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{startdate}}" start="1959-09-01" end="3018-09-01" data-id="{{index}}" bindchange="bindStartChange">
+
+            <input class="weui-input" name="licensestart" value='{{startdates[index]}}'> {{dates[index]}}
+            </input>
+          </picker>
+        </view>
+       </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">证书止期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{enddate}}" start="1959-09-01" end="3018-09-01" data-id="{{index}}" bindchange="bindEndChange">
+
+            <input class="weui-input" name="licenseend" value='{{enddates[index]}}'> {{dates[index]}}
+            </input>
+          </picker>
+        </view>
+     </view> -->
+
+
+
+
+     
+
+       <!-- <view class="weui-cell weui-cell_input ">
+
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+            <button  type="default" size="mini" bindtap="chooseImage" 
+            style='margin-top:0.5rem;'  wx:if="{{images.length < 2}}"
+            >添加身份1</button>
+            </view>
+          </view>
+
+          <view class="weui-cell__bd">
+              <!-- <view class="preview-tips"></view>
+                <input class="weui-input" name='' bindblur='' placeholder="添加身份影像的正面" />
+          </view>
+
+
+        </view> -->
+     
+
+
+
+
+
+
+          <view class="question-images">
+            <block wx:for="{{images}}" wx:key="*this">
+              <view class="q-image-wrap">
+                <!-- 图片缩略图  -->
+                <image class="q-image" name="src1" src="{{item}}" mode="aspectFill" 
+                data-idx="{{index}}" bindtap="handleImagePreview"></image>
+                <!-- 移除图片的按钮  -->
+                <view class="q-image-remover" data-idx="{{index}}" 
+                style='text-align:center;' bindtap="removeImage">删除</view>
+              </view>
+            </block>
+          </view>
+
+
+          <!-- 用于显示图片
+         <image wx:if="{{src}}" name="src1" mode="widthFix" src="{{src}}"></image> -->
+
+<!-- 
+       <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+            <button  type="default" size="mini" bindtap="chooseImage2" 
+            style='margin-top:0.5rem;'  wx:if="{{images2.length < 2}}"
+            >添加身份2</button>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+              <!-- <view class="preview-tips"></view>
+                <input class="weui-input" name='' bindblur='' placeholder="添加身份影像的反面" />
+          </view>
+        </view>-->
+       </view> 
+
+
+          <view class="question-images">
+            <block wx:for="{{images2}}" wx:key="*this">
+              <view class="q-image-wrap">
+                <!-- 图片缩略图  -->
+                <image class="q-image" name="src2" src="{{item}}" mode="aspectFill" 
+                data-idx="{{index}}" bindtap="handleImagePreview2"></image>
+                <!-- 移除图片的按钮  -->
+                <view class="q-image-remover" data-idx="{{index}}" 
+                style='text-align:center;' bindtap="removeImage2">删除</view>
+              </view>
+            </block>
+          </view>
+
+        
+
+
+
+
+         <view class="weui-btn-area">
+            <button class="weui-btn" 
+            style='background-color:#3E9DFD;'
+                type="primary" form-type="submit" 
+                data-id='{{id}}'>申请会员</button>
+         </view>
+
+
+
+
+
+
+    </view>
+  </form>
+</view>

@@ -1,0 +1,27 @@
+/* pages/policys/index.wxss */
+page{
+  background-color: #fff;
+}
+.weui-form-preview__label .good_num{
+font-family: PingFangSC-Medium;
+  font-size: 26.4rpx;
+  color: #ff6b02;
+  width: 169rpx;
+  padding-top: 23rpx;
+  line-height: 55rpx;
+}
+.btn_default image {
+  padding-left: 400rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+weui-form-preview__item {
+  overflow: hidden;
+  margin: 0px;
+}
+
+.weui-form-preview {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}

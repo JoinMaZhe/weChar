@@ -1,0 +1,9 @@
+{  "usingComponents": {
+    "wux-divider": "../../../dist/divider/index",
+    "wux-card": "../../../dist/card/index",
+    "wux-wing-blank": "../../../dist/wing-blank/index",
+    "van-popup": "../../../vant/dist/popup/index",
+  "van-action-sheet": "../../../vant/dist/action-sheet/index"
+    }
+  
+  }

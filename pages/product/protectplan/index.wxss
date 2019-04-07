@@ -1,0 +1,157 @@
+/* pages/product/protectplan/index.wxss */
+
+.page {
+  height: 100%;
+  background-image: linear-gradient(-12deg, #00e1d0 3%, #26abe2 82%, #26abe2 100%);
+}
+
+.hd {
+  top: 0;
+  left: 50%;
+  height: 247rpx;
+  width: 100%;
+}
+
+.logo {
+  position: absolute;
+  z-index: 2;
+  left: 19%;
+  top: 3%;
+  width: 113rpx;
+  height: 113rpx;
+  margin-left: -80rpx;
+  border-radius: 160rpx;
+  animation: sway 10s ease-in-out infinite;
+  opacity: 0.95;
+}
+
+.question {
+  position: absolute;
+  z-index: 2;
+  left: 39%;
+  top: 5%;
+  height: 113rpx;
+  margin-left: -80rpx;
+  border-radius: 160rpx;
+  animation: sway 10s ease-in-out infinite;
+  opacity: 0.95;
+  font-family: PingFangSC-Regular;
+  font-size: 36rpx;
+  color: #fff;
+}
+.questionDeital{
+  height: 113rpx;
+  width: 288rpx;
+  margin-left: 210rpx;
+  padding-top: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 36rpx;
+  color: #fff;
+  align-content: center;
+}
+
+.wave {
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  opacity: 0.725;
+  height: 180rpx;
+  left: 30rpx;
+  margin-left: 30rpx;
+}
+
+.wux-wingblank--default {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  opacity: 0.9;
+  height: 536rpx;
+  background: #09a7ca;
+  border-radius: 20px;
+}
+
+.bd {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #666;
+  letter-spacing: 0;
+  display: flex;
+}
+
+.choose {
+  margin: 90rpx 98rpx;
+  position:relative;
+display:block;
+
+}
+
+.choose image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+text {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+icon {
+  height: 40rpx;
+  width: 40rpx;
+  margin: 10rpx 18rpx;
+  border: 2rpx solid #04acd4;
+  border-radius: 20px;
+}
+
+.page__ft {
+  margin: 1.35rem 0 0.3rem;
+  align-content: center;
+}
+
+.button-sp-area {
+  display: flex;
+  margin: 0.35rem 0.3rem 0.3rem;
+}
+
+.button-sp-area  view {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #fff;
+  margin-top: 9rpx;
+}
+.wave2{
+  transform: translate3d(0,0,0);
+  animation: rise 1s cubic-bezier(0.19, 1, 0.22, 1) .25s forwards;
+}
+
+@keyframes rise{
+  0% {opacity: 0;transform: translate3d(0,0,0);}
+  50% {opacity: 1;}
+  100% {opacity: 1;transform: translate3d(0,10rpx,0);}
+}
+.wraper {
+    position: relative;
+    z-index: 1;
+    min-height: 100%;
+    background-color: #191e27;
+    background-image: url(../img/index_bg1.png),url(../img/index_bg2.png);
+    background-repeat: no-repeat,no-repeat;
+    background-position: right top,left bottom;
+    background-size: contain;
+    background-attachment: fixed;
+}
+.sex-tit {
+    padding: 1.8125rem .78125rem;
+    text-align: center;
+    color: #cff1f3;
+    align-items: center;
+    display: flex;
+    height: 4.1875rem;
+    position: relative;
+}
+.sex-content {
+    padding: 0 .78125rem;
+}

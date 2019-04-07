@@ -1,0 +1,209 @@
+<!--pages/product/compare2/compare2.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="head">
+      <view class='head-left'>
+
+        <view>
+          <image style="width: 124rpx; height: 36rpx;" src='{{imgurl+productIdList[0].insuranceCompany.picture[0].url}}'></image>
+          <view>{{productIdList[0].shortName}}</view>
+        </view>
+      </view>
+      <view class='head-middle'>VS</view>
+      <view class='head-right'>
+
+        <view>
+          <image style="width: 124rpx; height: 36rpx; " src='{{imgurl+productIdList[1].insuranceCompany.picture[0].url}}'></image>
+        </view>
+        <view>{{productIdList[1].shortName}}</view>
+      </view>
+    </view>
+
+
+    <view class="page__desc"></view>
+  </view>
+  <view class="page__bd">
+
+    <view class="sub-title">基本信息对比</view>
+    <view class='wux-wingblank--default'>
+      <view class="wux-card__hd">
+        <view class="wux-card__content">
+          <text>属性</text>
+        </view>
+        <view class="wux-card__extra">
+          详情
+        </view>
+      </view>
+      <view class="wux-card__bd odd ">
+        <view class='tr'>
+          <view class='th'>险种 </view>
+          <view class='td' style='color:#666666;'>{{productIdList[0].shortName}}</view>
+          <view class='td' style='color:#666666;'>{{productIdList[1].shortName}}</view>
+        </view>
+      </view>
+      <view class="wux-card__bd ">
+        <view class='tr'>
+          <view class='th'>所属公司 </view>
+          <view class='td'>{{productIdList[0].insuranceCompany.fullName}}</view>
+          <view class='td {{productIdList[0].insuranceCompany.fullName==productIdList[1].insuranceCompany.fullName?"":"diff"}}'>{{productIdList[1].insuranceCompany.fullName}}</view>
+        </view>
+      </view>
+      <view class="wux-card__bd odd">
+        <view class='tr'>
+          <view class='th'>保险期间 </view>
+          <view class='td'>
+            <block wx:for="{{productIdList[0].coverageTerms}}" wx:for-item="item">
+              <block wx:if="{{item.label}}">
+                <text>{{item.label}}</text>
+              </block>
+            </block>
+          </view>
+          <view class='td'>
+            <block wx:for="{{productIdList[1].coverageTerms}}" wx:for-item="item">
+              <block wx:if="{{item.label}}">
+                <text>{{item.label}}</text>
+              </block>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="wux-card__bd ">
+        <view class='tr'>
+          <view class='th'>投保范围 </view>
+          <view class='td'>
+            <block wx:if="{{productIdList[0].productRule.minOwnerAge}}">
+              <text>{{productIdList[0].productRule.minOwnerAge}}-{{productIdList[0].productRule.maxOwnerAge}}</text>
+            </block>
+            <block wx:else>
+              <text>--</text>
+            </block>
+          </view>
+          <view class='td {{productIdList[0].productRule.minOwnerAge==productIdList[1].productRule.minOwnerAge&&productIdList[0].productRule.maxOwnerAge==productIdList[1].productRule.maxOwnerAge?"":"diff"}}'>
+            <block wx:if="{{productIdList[1].productRule.minOwnerAge}}">
+              <text>{{productIdList[1].productRule.minOwnerAge}}-{{productIdList[1].productRule.maxOwnerAge}}</text>
+            </block>
+            <block wx:else>
+              <text>--</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="wux-card__bd odd">
+        <view class='tr'>
+          <view class='th'>
+
+            责任范围 </view>
+          <view class='td'>
+            <block wx:for="{{productIdList[0].onePlanLiability}}" wx:for-item="item">
+              <block wx:if="{{item.liabilityName}}">
+                <text>{{item.liabilityName}}、</text>
+              </block>
+              <block wx:else>
+                <text>--</text>
+              </block>
+            </block>
+          </view>
+          <view class='td diff'>
+            <block wx:for="{{productIdList[1].onePlanLiability}}" wx:for-item="item">
+              <block wx:if="{{item.liabilityName}}">
+                <text>{{item.liabilityName}}、</text>
+              </block>
+              <block wx:else>
+                <text>--</text>
+              </block>
+            </block>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+    <view class="sub-title">其他信息对比</view>
+    <view class='wux-wingblank--default'>
+      <view class="wux-card__hd">
+        <view class="wux-card__content">
+          <text>属性</text>
+        </view>
+        <view class="wux-card__extra">
+          详情
+        </view>
+      </view>
+      <view class="wux-card__bd odd ">
+        <view class='tr'>
+          <view class='th'>险种 </view>
+          <view class='td' style='color:#666666;'>{{productIdList[0].shortName}}</view>
+          <view class='td' style='color:#666666;'>{{productIdList[1].shortName}}</view>
+        </view>
+      </view>
+      <view class="wux-card__bd odd">
+        <view class='tr'>
+          <view class='th'>条款 </view>
+          <view class='td'>
+            <block wx:if="{{productIdList[0].provision[0].name}}">
+              <text data-url="{{productIdList[0].provision[0].url}}" data-type="pdf" catchtap='downloadFile'>
+              {{productIdList[0].provision[0].name}}
+              </text>
+            </block>
+            <block wx:else>
+              <text>--</text>
+            </block>
+          </view>
+          <view class='td diff'>
+            <block wx:if="{{productIdList[1].provision[0].name}}">
+              <text data-url="{{productIdList[1].provision[0].url}}" data-type="pdf" catchtap='downloadFile'>{{productIdList[1].provision[0].name}}</text>
+            </block>
+            <block wx:else>
+              <text>--</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="wux-card__bd ">
+        <view class='tr'>
+          <view class='th'>条款 </view>
+          <view class='td '>
+            <block wx:if="{{productIdList[0].provision[1].name}}">
+              <text data-url="{{productIdList[0].provision[1].url}}" data-type="pdf" catchtap='downloadFile'>{{productIdList[0].provision[1].name}}</text>
+            </block>
+            <block wx:else>
+              <text>--</text>
+            </block>
+          </view>
+          <view class='td diff'>
+            <block wx:if="{{productIdList[1].provision[1].name}}">
+              <text data-url="{{productIdList[1].provision[1].url}}" data-type="pdf" catchtap='downloadFile'>{{productIdList[1].provision[1].name}}</text>
+            </block>
+            <block wx:else>
+              <text>--</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="wux-card__bd odd">
+        <view class='tr'>
+          <view class='th'>条款 </view>
+          <view class='td '>
+            <block wx:if="{{productIdList[0].provision[2].name}}">
+              <text data-url="{{productIdList[0].provision[2].url}}" data-type="pdf" catchtap='downloadFile'>{{productIdList[0].provision[2].name}}</text>
+            </block>
+            <block wx:else>
+              <text>--</text>
+            </block>
+          </view>
+          <view class='td diff'>
+            <block wx:if="{{productIdList[1].provision[2].name}}">
+              <text data-url="{{productIdList[1].provision[2].url}}" data-type="pdf" catchtap='downloadFile'>{{productIdList[1].provision[2].name}}</text>
+            </block>
+            <block wx:else>
+              <text>--</text>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <!--  <view class="wux-card__ft">
+    <image class="botton" mode='aspectFit' src="../../../images/know.png" bindtap=''></image>
+  </view>-->
+</view>

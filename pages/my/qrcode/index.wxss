@@ -1,0 +1,30 @@
+.container{
+	height:100%;
+  background: #ffffff;
+}
+text {
+	text-align: center;
+}
+.qrcode {
+  width: 278rpx;
+  height: 278rpx;
+  display: block;
+  margin: 0 auto;  
+  padding-top: 350rpx;
+}
+.page-bd{
+   display: block;
+  margin: 0 auto; 
+  font-size: 28rpx; 
+  margin-top:50rpx;
+
+}
+.page-bd view{
+background-color:#04acd4;
+color:white;
+line-height: 80rpx;
+text-align: center;
+border-radius:100rpx;
+
+
+}

@@ -1,0 +1,66 @@
+<view class="page">
+  <view class="page__bd">
+    <block wx:for="{{listData}}" wx:key="{{code}}">
+      <view class="feed-item ">
+        <view class="weui-form-preview__deital" bindtap="toInfoTip" data-id="{{item.id}}" data-code="{{item.polNo}}">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label title">{{item.productName}}</view>
+            <view class="weui-form-preview__value balance "></view>
+          </view>
+          <view class="weui-form-preview__item liability ">
+            <view class="weui-form-preview__label title">订单号</view>
+            <view class="weui-form-preview__value">{{item.polNo}}</view>
+          </view>
+
+          <view class="weui-form-preview__item liability ">
+            <view class="weui-form-preview__label title">保单号</view>
+            <view class="weui-form-preview__value">{{item.channelOrderId||"未承保"}}</view>
+          </view>
+
+          <view class="weui-form-preview__item liability ">
+            <view class="weui-form-preview__label title">投保人</view>
+            <view class="weui-form-preview__value">
+             
+                {{item.applyVM.applyName}}
+              
+            </view>
+          </view>
+          <view class="weui-form-preview__item liability ">
+            <view class="weui-form-preview__label title">到期时间</view>
+            <view class="weui-form-preview__value">{{item.insureEndTime}}</view>
+          </view>
+        </view>
+
+        <view class="foot">
+          <view class="good_num">
+            <view wx:if="{{item.orderPayStatus==='PAY_SUCCESS'&& item.appStatus==='ACPTINSD_SUCCESS' }}" class="btn_default">
+              <view class="good_num"> 已支付 已承保 </view>
+
+            </view>
+            <view wx:if="{{item.orderPayStatus==='PAY_SUCCESS'&& item.appStatus ==='UNINSURED' }}" class="btn_default">
+              <view class="good_num"> 已支付 未承保</view>
+            </view>
+            <view wx:if="{{item.orderPayStatus!='PAY_SUCCESS'}}" class="btn_default">
+              <view class="good_num"> 未支付 未承保</view>
+            </view>
+            <view wx:if="{{item.orderPayStatus==='PAY_SUCCESS'&& item.appStatus==='SURRENDER_SUCCESS' }}" class="btn_default">
+              <view class="good_num"> 已退保 </view>
+
+            </view>
+             <view wx:if="{{item.orderPayStatus==='PAY_SUCCESS'&& item.appStatus==='SURRENDER_FAILURE' }}" class="btn_default">
+              <view class="good_num"> 退保失败 </view>
+
+            </view>
+            
+
+          </view>
+
+        </view>
+
+        <view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

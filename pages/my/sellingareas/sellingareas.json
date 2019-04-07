@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-collapse": "../../../vant/dist/collapse/index",
+    "van-collapse-item": "../../../vant/dist/collapse-item/index",
+    "wux-card": "../../../dist/card/index",
+    "wux-wing-blank": "../../../dist/wing-blank/index"
+  }
+}

@@ -1,0 +1,170 @@
+<!--pages/product/detial/detial.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__bd part0">
+    <image style="width:100%; height:262rpx;" src="{{imgurl+product.wechatProduct.picture[0].url}}" />
+  </view>
+  <view class="goods-info">
+    <view class="goods-title">{{product.name}}</view>
+    <view class="goods-price" style="padding-left:35rpx;">
+      {{product.price!=-1?'¥'+product.price+'起':'试算后可见'}}
+    </view>
+    <view>
+      <view class="goods-detial" style="color:#999;font-size:24rpx;">
+        保障期限：
+        <block wx:for="{{product.coverageTerms}}" wx:for-item="item">
+          {{item.label}}
+        </block>
+      </view>
+      <view class="goods-detial line_nav"></view>
+      <view class="goods-detial" wx:if='{{product.productRule.minInsuredAge}}' style="color:#999;font-size:24rpx;">投保年龄： {{product.productRule.minInsuredAge}}-{{product.productRule.maxInsuredAge}}
+      </view>
+    </view>
+    <view class="goods-info-fx">
+      <image src='{{imgurl+product.insuranceCompany.picture[0].url}}' />
+      <!-- <button open-type="share">分享</button>-->
+      <text></text>
+    </view>
+  </view>
+  <view class="row-arrow">
+    <view class="title">
+      <text>保障计划</text>
+    </view>
+
+    <view class='wux-card' style="margin: 10rpx 10rpx; border: 1px solid #CCCCCC; border-color: #CCCCCC">
+      <scroll-view scroll-x="true" class="header">
+        <view class="nav">
+          <view wx:for-items="{{plans}}" class="{{currentNavtab==idx? 'active':''}}" wx:for-item="item" wx:for-index="idx" data-idx="{{idx}}" data-id="{{item.id}}" data-idx="{{idx}}" data-currentNavtab='{{currentNavtab}}' data-plancode='{{item.code}}' data-planname=' {{item.name}}'
+            bindtap="liabilityAmount"> {{item.name}}</view>
+
+        </view>
+      </scroll-view>
+
+      <wux-divider show-text="{{ false }}" />
+      <view>
+        <!--<view class="weui-cells weui-cells_after-title">-->
+        <block wx:for-items="{{list}}" wx:for-item="item">
+         <view class="liability" wx:if='{{item.amount=="不支持" }}' bindtap='toggleBottomPopup' data-plan='{{list}}' data-idx='{{index}}'>
+            <view class="weui-cell__bd"> {{item.liabilityName }}</view>
+            <view class="weui-cell__ft " style='padding-right:20rpx;'> {{item.amount }}</view>
+          </view>
+          <view class="liability" wx:else  bindtap='toggleBottomPopup' data-plan='{{list}}' data-idx='{{index}}'>
+            <view class="weui-cell__bd"> {{item.liabilityName }}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"> {{item.amount }}</view>
+          </view>
+          <wux-divider show-text="{{ false }}" dashed />
+          <van-action-sheet show="{{ item.show }}" title="{{item.liabilityName}}" bind:close="onClose" data-plan='{{list}}' data-idx='{{index}}'>
+
+            <view class='dutyDetails'>{{item.dutyDetails }}</view>
+            <wux-divider show-text="{{ false }}" dashed />
+          </van-action-sheet>
+        </block>
+        <view class="">
+          <view class='weui-cell-navigator'>
+            <view class="weui-cell__bd">
+              <view class="goods-price" style="padding-left:35rpx;color: #e64340;">
+                {{product.price!=-1?'¥'+product.price+'起':'试算后可见'}}
+              </view>
+            </view>
+            <view class="weui-cell__ft">
+              <text class='enn-button' bindtap='trialTAp'>  保费试算</text>
+            </view>
+          </view>
+          <wux-divider show-text="{{ false }}" dashed />
+        </view>
+      </view>
+    </view>
+    <van-action-sheet show="{{trialshow}}" title="算算保费" bind:close="onCloseTrial" data-plan='{{list}}' data-idx='{{index}}'>
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <input class="weui-input" hidden='true' name='insuranceProductId' value="{{product.id}}" />
+        <input class="weui-input" hidden='true' name='planId' value="{{planId}}" />
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">当前计划</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name='planname' value="{{planName}}" placeholder="" />
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_select weui-cell_vcode">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+              <view class="weui-label">承保职业</view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker bindchange="bindCareerChange" value="{{careerIndex}}" name='career' range="{{careers}}">
+                <view class="weui-select weui-select_in-select-after">{{careers[careerIndex]}}</view>
+              </picker>
+            </view>
+            <view class="weui-cell__ft">
+              <view class="weui-vcode-btn" bindtap="bindCareerTap">查询职业</view>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+              <view class="weui-label">保障期限</view>
+            </view>
+            <view class="weui-cell__bd" wx:if='{{coverageTerms.length>1}}'>
+              <picker bindchange="bindCoverageChange" value="{{coverageTermsIndex}}" name='coverageTerm' range="{{coverageTerms}}">
+        <view class="weui-select weui-select_in-select-after">{{coverageTerms[coverageTermsIndex]}}</view>
+              </picker>
+            </view>
+             <view class="weui-cell__bd" wx:else>
+              <input class="weui-input" value="{{coverageTerms[0]}}" name='' disabled='true' placeholder="" />
+               <input class="weui-input" hidden='true' value="{{coverageTermsIndex}}" name='coverageTerm' disabled='true' placeholder="请输入手机号" />
+            </view>
+          </view>
+          <!--<view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">您的手机号</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" value="" placeholder="请输入手机号" />
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">您的姓名</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" value="" placeholder="请输入姓名" />
+            </view>
+          </view>-->
+          <view class="insure_nav">
+            <view class="line_nav"></view>
+            <button class="button-red" data-id="{{product.id}}" data-url="{{imgurl+product.wechatProduct.picture[0].url}}" data-code="{{product.code}}" formType="submit">确定</button>
+          </view>
+        </view>
+      </form>
+    </van-action-sheet>
+
+    <view class="page__ft j_bottom">
+      <view class="page__ft ">
+        <view style='color: #999999;'>详情请阅读:</view>
+        <view class='base-color' wx:if='{{product.importantInfo.length>1}}' data-info='{{product.importantInfo}}' bindtap='toProvision'>《投保须知》</view>
+         <view class='base-color' wx:else  data-info='{{imgurl+product.importantInfo[0].url}}' bindtap='openInfo'>《投保须知》</view>
+
+        <view style='color: #999999;'> 、</view>
+        <view class='base-color' data-info='{{product.provision}}' bindtap='toProvision'>《保险条款》</view>
+         <view style='color: #999999;'> 、</view>
+                 <view class='base-color' data-info='{{imgurl+product.claims[0].url}}' bindtap='openInfo'>《理赔流程》</view>
+      </view>
+
+    </view>
+  </view>
+  <view class="features" wx:if='{{product.features.length>0}}'>
+    <image style="" src='{{imgurl+product.features[0].url}}' mode="widthFix"></image>
+  </view>
+   <view style="height:20rpx;background: #eee;width:100%;"></view>
+   <view style='background: #fff;display: flex;'>
+     <view class="version" bindtap='call' data-telephone="{{product.insuranceCompany.telephone}}" >客服热线: {{product.insuranceCompany.telephone}}</view>
+      <view class="version" bindtap='call' data-telephone="400-605-8000" >理赔热线: 400-605-8000</view>
+   </view>
+
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="detail-nav">
+    <image bindtap="onCollectionTap" data-id="{{product.id}}" src="{{collected?'../../../images/selected.png':'../../../images/normal.png'}}" />
+    <view class="line_nav"></view>
+
+    <button class="button-red" bindtap="immeBuy" data-id="{{product.id}}" data-url="{{imgurl+product.wechatProduct.picture[0].url}}" data-code="{{product.code}}" formType="submit">立即投保</button>
+  </view>
+</view>

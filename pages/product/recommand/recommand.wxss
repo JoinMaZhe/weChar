@@ -1,0 +1,12 @@
+/* pages/product/recommand/recommand.wxss */
+.liability{
+  font-family: PingFangSC-Regular;
+font-size: 26rpx;
+color: #999999;
+text-align: left;
+}
+
+.right{
+  float: right;
+  font-size: 26rpx;
+}

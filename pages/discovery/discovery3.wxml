@@ -1,0 +1,68 @@
+<view class="page__bd" style='background-color: #FFFFFF;'>
+  <view style='padding-left:670rpx;'>
+    <wux-icon type="md-search" bindtap="bindItemTap"/>
+  </view>
+</view>
+<view class="container discovery ">
+  <view class="ctnt0" >
+    <swiper class="activity" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item bindtap="bindItemTap">
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="menu-wrp">
+      <view class="menu-list" wx:for="{{menu.imgUrls}}" data-code='{{menu.descs2[index].code}}' bindtap="bindItemTap">
+        <image class="menu-img" src="{{item}}" />
+        <view class="menu-desc">{{menu.descs2[index].name}}</view>
+      </view>
+      <navigator class="menu-list" url='../my/claims/claims'>
+        <image class="menu-img" src="../../images/service.png" />
+        <view class="menu-desc">增值服务</view>
+      </navigator>
+    </view>
+    <view class="list">
+      <view class="poi" wx:key="poi.id" bindtap='toCompare'>
+        <view class="info">
+          <view class="title">产品对比</view>
+          <view>
+            <text>这款产品怎么样?
+          比一比才知道,差距一秒见分晓。</text>
+          </view>
+        </view>
+        <view class=" image">
+          <image src="../../images/compare2.png" mode="aspectFill"></image>
+        </view>
+
+      </view>
+
+      <view class="poi" wx:key="poi.id" bindtap="toProtectPlan" style='margin-left:5rpx;'>
+        <view class="info">
+          <view class="title">保障规划</view>
+          <view>
+            <text>不知道怎么选保障?
+          让小奥根据你的家庭情况为你量身定制方案吧。</text>
+          </view>
+        </view>
+        <image src="../../images/protectPlan.png" mode="aspectFill"></image>
+      </view>
+
+    </view>
+    <view class="list">
+      <view class="poix" wx:key="poi.id" bindtap="toPremiumCalc" style='margin-left:5rpx;'>
+        <view class="info">
+          <view class="title">保费评估</view>
+          <view>
+            <text>不知道产品保费多少?
+          让小奥根据你的人身情况为你评估保费吧。</text>
+          </view>
+        </view>
+        <image style='' src="../../images/premiumcalc.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <!-- <view class="btn-area" bindtap='toPremiumCalc'> 
+          <button type="primary">人身险保费评估</button> 
+      </view> -->
+  </view>
+</view>

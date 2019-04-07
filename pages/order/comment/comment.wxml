@@ -1,0 +1,24 @@
+<form bindsubmit="formSubmit" report-submit="true">
+    <view class="page" >
+        <view class="page__bd">
+            <wux-cell-group title="{{productName}}">
+                <wux-cell title="产品描述" hover-class="none">
+                    <wux-rater controlled slot="footer" bindchange="setProductGrade" value="{{comment.productGrade}}" default-value="{{ comment.productGrade }}" margin="{{ 15 }}" icon="ios-heart" />
+                </wux-cell>
+                <wux-cell title="服务态度" hover-class="none">
+                    <wux-rater controlled slot="footer" bindchange="setServiceGrade" default-value="{{ comment.serviceGrade }}" margin="{{ 15 }}" icon="ios-happy" />
+                </wux-cell>
+                <wux-cell title="其他服务" hover-class="none">
+                    <wux-rater controlled slot="footer" bindchange="setOtherGrade" value="{{comment.otherGrade}}" default-value="{{ comment.otherGrade }}" margin="{{ 15 }}" icon="ios-sunny" />
+                </wux-cell>
+                <wux-cell hover-class="none">
+                    <wux-textarea name="detail" controlled value="{{comment.detail}}" bind:blur="onBlur"  hasCount rows="3" cursorSpacing="80" placeholder="产品满足您的期待吗?说说你的购买心得,分享给想买的他们吧~" />
+                </wux-cell>
+            </wux-cell-group>
+
+        </view>
+    </view>
+    <view class="weui-btn-area" style="background-color: #f8f8f8;height: 700rpx">
+        <button class="weui-btn"  form-type="submit">提交评价</button>
+    </view>
+</form>

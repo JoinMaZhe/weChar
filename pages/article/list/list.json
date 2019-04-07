@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "锦囊",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

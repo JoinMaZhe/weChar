@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText":"产品对比",
+  "usingComponents": {
+    "wux-checkbox-group": "../../../dist/checkbox-group/index",
+    "wux-checkbox": "../../../dist/checkbox/index",
+    "wux-icon": "../../../dist/icon/index",
+    "wux-button": "../../../dist/button/index",
+    "wux-card": "../../../dist/card/index",
+    "wux-wing-blank": "../../../dist/wing-blank/index",
+      "wux-search-bar": "../../../dist/search-bar/index"
+  }
+
+}

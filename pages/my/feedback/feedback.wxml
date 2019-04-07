@@ -1,0 +1,34 @@
+<!--pages/my/feedback/feedback.wxml-->
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class="btn-row">
+    <view class="section section_gap">
+      <view style="margin-top:35rpx;margin-bottom:35rpx;">评价：</view>
+      <radio-group name="feedBackType">
+        <label style="margin-right:35rpx;">
+          <radio value="01" checked/>产品</label>
+        <label style="margin-right:35rpx;">
+          <radio value="02" />服务</label>
+        <label style="margin-right:35rpx;">
+          <radio value="03" />其他</label>
+      </radio-group>
+    </view>
+    <view class="row-box" style="margin-top:35rpx">
+      <textarea name="fbinfo" style="margin-top:35rpx;width:100%;" value="" bindinput="inputs" maxlength="200" bindblur="bindTextAreaBlur" placeholder="请输入反馈内容..." rows="5" id="feedbackinfo" />
+    </view>
+    <view class="weui-cells ">
+        <view class="weui-cell weui-cell_input page-section">
+          <view class="weui-cell__hd">
+            <view class="weui-label">手机号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" name="phonenNum" placeholder="请输入您的手机号" />
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+  <view class="btn-row">
+    <button style="float:right;" class="confirm-btn" formType="submit">提交反馈</button>
+  </view>
+</form>

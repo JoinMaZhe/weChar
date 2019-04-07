@@ -1,0 +1,92 @@
+<!--pages/discovery/discovery2.wxml-->
+<wux-notice-bar  loop icon="../../images/horn.png">
+  所有的保险产品的销售等服务由新奥保险经纪公司提供，所有的保险产品的销售等服务由新奥保险经纪公司提供，
+  </wux-notice-bar>
+<view class="rank" hidden="{{rankList.length <= 0}}">
+  <view class="top " style='position:relaitve;'>
+    <view class="photoBg" style='position:absolute; z-index:2; width:750rpx; height:210rpx;left:0px; top:0px; '>
+      <image src="../../images/photo.png" mode="cover"></image>
+    </view>
+    <view style='position:absolute; z-index:3; width:750rpx; height:260rpx; left:20px;; top:30rpx;background-color: transparent;color:#fff'>{{userInfo.nickName}},<text style='font-size:28rpx;'>欢迎来到新奥保险服务～～</text></view>
+    <view class="" style='position:absolute; z-index:3; width:750rpx; height:260rpx; left:0px;; top:75rpx;background-color: transparent;'>
+      <view class="rank__banner">
+        <view class="menu-wrp">
+          <view class="menu-list {{index%2==1 ||index>4 ||index==2? 'right':''}} {{index>3?'':'bottom'}}" wx:for="{{menu.imgUrls}}" data-code='{{menu.descs2[index].code}}' data-url='{{menu.descs2[index].url}}' data-index='{{index}}' bindtap="bindItemTap">
+            <image class="menu-img" src="{{item}}" />
+            <view class="menu-desc">{{menu.descs2[index].name}}</view>
+          </view>
+
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+
+
+  <view class="rank__list">
+  <view class="swiper-container">
+        <swiper class="swiper_box" 
+                    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+            <block wx:for="{{banners}}" wx:for-item="item" wx:key="index">
+                <swiper-item>
+                    <image bindtap="" data-id="{{item.businessId}}" src="{{item}}" class="slide-image" width="750rpx" height="562.5rpx"/>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="dots">  
+            <block wx:for="{{banners}}" wx:key="unique">  
+                <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>  
+            </block>  
+        </view>  
+   </view>
+
+    <view class="type-container">
+      <view class='title'>产品库</view>
+      <scroll-view class="type-navbar" scroll-x="true">
+        <view class="coupons-item {{currentNavtab==idx? 'active':''}} " wx:for-items="{{navbar_type}}" wx:for-index="idx" wx:key="id" bindtap="gitTypeList" data-code="{{item.code}}" data-currentNavtab='{{currentNavtab}}' data-idx="{{idx}}">
+          <image class="icon" src="{{item.url}}"></image>
+          <view class="txt {{currentNavtab==idx? 'active':''}}"> {{item.name}} </view>
+          <view wx:if="{{currentNavtab==idx}}" class='amount'> {{productList.length}}款产品 </view>
+        </view>
+
+      </scroll-view>
+    </view>
+    <block wx:if="{{productList.length>0}}">
+      <view class="m-poi {{index === productList.length - 1 ? 'rank__item--last' : ''}} " wx:for="{{ productList }}" wx:for-item="product" wx:key="product.id" wx:for-index="index" data-index="{{index}}" bindtap="viewTrip" data-type="{{ product.type }}" data-id="{{ product.id }}"
+        data-name="{{ product.name }}">
+        <view class="rank__no"></view>
+        <image class="cover" src="{{imgurl+product.wechatProduct.picture[0].url }}" background-size="cover"></image>
+        <image wx:if="{{index==0 }}" class="label" src="../../images/jin.png"></image>
+        <image wx:if="{{index==1 }}" class="label" src="../../images/yin.png"></image>
+        <image wx:if="{{index==2 }}" class="label" src="../../images/tong.png"></image>
+        <view class="info">
+          <view class="title">
+            <text>{{ product.shortName}}</text>
+          </view>
+          <view class="rating">
+            <text>性价比指数：</text>
+            <wux-rater slot="footer" disabled fontSize='16' default-value="{{ product.wechatProduct.wechatRating.serviceGrade }}" />
+          </view>
+          <view class="detail">本产品由{{product.insuranceCompany .fullName}}负责理赔
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="wux-prompt__bd" role="" aria-label="">
+        <image class="wux-prompt__icon" src="{{ msg.icon }}"></image>
+        <view class="wux-prompt__title" role="" aria-label="">{{ msg.title }}</view>
+        <view class="wux-prompt__text" role="" aria-label="">{{ msg.text }}</view>
+      </view>
+    </block>
+  </view>
+  <!--<view class="rank__tip" bindtap="copyGithubUrl"></view>-->
+</view>
+
+<wux-fab-button   action='../../images/menu.png' position="{{ types[typeIndex] }}" theme="{{ colors[colorIndex] }}" direction="{{ dirs[dirIndex] }}" reverse="{{ reverse }}" spaceBetween="{{ spaceBetween }}" sAngle="{{ sAngle }}" eAngle="{{ eAngle }}" buttons="{{ buttons }}" bind:change="onChange" bind:click="onClick" bind:contact="onContact" bind:getuserinfo="onGotUserInfo" />
+
+<van-dialog use-slot async-close show="{{ show }}" show-cancel-button bind:close="onClose" bind:onConfirm="onClose">
+    <van-field value="{{ username }}" label="手机号" placeholder="请输入手机号" bind:change="onChange1" />
+    <van-field value="{{ password }}" type="password" label="密码" :border="false" placeholder="请输入密码" bind:change="onChange2" />
+  </van-dialog>

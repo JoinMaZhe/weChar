@@ -1,0 +1,42 @@
+<!--pages/my/collect/collect.wxml-->
+<view scroll-y="true" class="container" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view wx:if='{{productsCollected.length>0}}'>
+      <block wx:for="{{productsCollected}}" wx:for-item="item">
+        <view class="feed-item" hidden='{{item.hidden}}'>
+          <view class="weui-form-preview__deital">
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label title">{{item.shortName}}</view>
+              <view class="weui-form-preview__value">{{item.insuranceCompany.fullName}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+              <block wx:for="{{item.coverageTerms}}" wx:for-item="item">
+                <view class="weui-form-preview__label  view2">保障期限：{{item.label}}</view>
+              </block>
+
+            </view>
+            <view class="weui-form-preview__item liability " wx:for="{{item.onePlanLiability}}">
+              <view class="weui-form-preview__label">{{item.liabilityName}}</view>
+              <view class="weui-form-preview__value"> {{item.amount}}元</view>
+            </view>
+          </view>
+          <view class="foot">
+          <view wx:if="{{item.price==-1}}" class="weui-form-preview__label" style="font-size:26.4rpx;margin: 30rpx 0rpx ">保费试算后可见</view>
+          <view wx:else class="good_num">{{item.price}}元起</view>
+            
+            <view bindtap="bindItemTap" data-id="{{item.id}}" data-url="{{item.pictureUrl}} " data-code="{{item.code}}" class="btn_default">
+              <image src="../../../images/product.png"></image>
+            </view>
+          </view>
+          <view>
+
+          </view>
+        </view>
+
+      </block>
+    </view>
+    <view wx:else>
+      <view class="weui-tab__content">
+        <wux-prompt visible="true" icon="{{ msg.icon }}" title="{{ msg.title }}" text="{{ msg.text }}" buttons="{{ msg.buttons }}" bind:click="buttonClicked" />
+      </view>
+    </view>
+  </view>

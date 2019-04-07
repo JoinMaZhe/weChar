@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "精选",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "disableScroll": false,
+  "usingComponents": {
+    "wux-icon": "../../../dist/icon/index"
+  }
+}

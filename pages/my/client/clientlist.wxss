@@ -1,0 +1,258 @@
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+    font-size: 32rpx;
+}
+.td .image{
+width: 40rpx;
+height: 40rpx;
+}
+
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #04ACD4;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  font-size: 36rpx;
+}
+/* pages/article/list/list.wxss */
+
+.container {
+  height: 100%;
+  margin-top: 14rpx;
+}
+.page{
+  background: #f8f8f8;
+}
+.placehold {
+  font-size: 28rpx;
+  padding: 80rpx 0;
+}
+
+.weui-form-preview__deital {
+  font-size: 0.9em;
+  text-align: right;
+  color: #999;
+  line-height: 2;
+}
+
+.detail-title {
+  float: left;
+  width: 100%;
+  height: 2.46em;
+  padding-bottom: 0.5em;
+  padding-top: 0.6em;
+  padding-left: 0.6em;
+}
+
+.title {
+  font-family: PingFangSC-Regular;
+  font-size: 34rpx;
+  color: #222;
+}
+
+.view2 {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.liability {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.good_num {
+  font-family: PingFangSC-Medium;
+  font-size: 26.4rpx;
+  color: #ff6b02;
+  width: 169rpx;
+  padding-top: 23rpx;
+  line-height: 55rpx;
+}
+
+.foot {
+
+  padding-top:0.5em;
+  position: relative;
+  display: flex;
+  /* line-height: 55rpx; */
+  border-top: 2rpx solid #ddd;
+  /* height: 95rpx; */
+
+}
+
+.btn_default image {
+  padding-left: 450rpx;
+  padding-top: 23rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.detail-title {
+  background: 0 0 no-repeat;
+  background-size: auto 100%;
+  text-align: left;
+  color: rgb(0, 0, 0);
+  font-size: 2.92em;
+  display: block;
+  height: 100%;
+  padding-top: 0.55em;
+}
+
+.list {
+  display: block;
+  background-color: #f8f8f8;
+}
+
+image {
+ width:0.6em;
+height:0.7em;
+vertical-align: middle;
+
+}
+.balance{
+  font-family: PingFangSC-Medium;
+  font-size: 26.4rpx;
+  color: #ff6b02;
+}
+.feed-item {
+width:690rpx;
+padding:30rpx 30rpx 20rpx;
+margin:18rpx 0 18rpx 0;
+background:#ffffff;
+}
+
+.weui-form-preview__value {
+
+text-align:right;
+
+}
+
+.weui-form-preview__item {
+
+margin-bottom:0.5em;
+
+}
+
+
+.weui-btn_plain-primary_add{
+  color: #87C2FD;
+    border: 1px solid #87C2FD;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: 0.1em;
+    padding-left: 4px; 
+    padding-right: 0px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+
+
+    border-radius: 5px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+
+    margin:0px;
+    width:5em;
+    height:2em;
+    margin-right:2px
+
+}
+
+.weui-btn_plain-primary {
+   padding: 10% 0 10% 3%; 
+    color: #87C2FD;
+    border: 1px solid #87C2FD;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: 0.1em;
+    /* padding-left: 14px; */
+    padding-right: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1em;
+    border-radius: 5px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+
+.weui-icon-cancel {
+    color: red;
+    font-size: 22px;
+   
+    vertical-align: middle;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1;
+    font-family: weui;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    margin-left: .2em;
+    margin-right: .2em;
+}
+
+.weui-icon-cancel:before {
+    content: "\EA0D";
+}
+
+ .mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.7;
+}
+
+.modalDlg{
+    width: 580rpx;
+    height: 620rpx;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 9999;
+    margin: -370rpx 85rpx;
+    background-color: #fff;
+    border-radius: 36rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hasemore{
+}

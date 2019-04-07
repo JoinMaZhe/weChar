@@ -1,0 +1,17 @@
+<view class="page">
+    <view class="page__hd">
+    </view>
+    <view class="page__bd">
+        <wux-notice-bar icon="" content=" ● 根据您的个人情况，我们为您推荐的保障如下" />
+        <block wx:for="{{list}}"    wx:for-item="item"> 
+          <wux-card full="{{ true }}" title="{{item.shortName}}" extra="查看产品" thumb="../../images/product.png" bindtap="bindItemTap" data-id="{{item.id}}" data-code="{{item.code}}" data-url="{{item.pictureUrl}} ">
+
+              <view class='weui-form-preview__item liability' slot="body" wx:for="{{item.onePlanLiability}}" wx:for-item="onePlanLiability">
+                <view class="weui-form-preview__label">{{onePlanLiability.liabilityName}}</view>
+                <view class="weui-form-preview__value right"> {{onePlanLiability.amount}}元</view>
+              </view>
+             <!-- <view slot="footer">推荐理由：高端大气上档次</view>-->
+          </wux-card>
+        </block>
+    </view>
+</view>

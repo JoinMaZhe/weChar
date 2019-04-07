@@ -1,0 +1,136 @@
+<!--pages/my/informationdisclosure/informationdisclosure.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">公司简介</view>
+    <view class="page__desc"></view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__h1">新奥保险服务是新奥保险经纪有限公司自营微信公众平台，主要用于保险知识普及、保险业务咨询、保险产品推广。新奥保险服务拥有中国保监会认可的互联网保险销售资质，资质查询链接如下：http://icid.iachina.cn/（请复制到电脑使用IE浏览器打开）。</view>
+      <view class="weui-article__section">
+
+        <view class="weui-article__section">
+          <view class="weui-article__h3">新奥保险经纪有限公司（简称“新奥保险经纪”）于2017年1月经中国保险监督管理委员会批准设立，注册资本5000万元，注册地在天津自贸区保险产业园，是天津自贸区空港保险产业园首家获批的全国性保险经纪公司。新奥保险经纪是新奥集团股份有限公司旗下全资子公司。
+          </view>
+          <view class="weui-article__p">
+            新奥保险经纪主营业务包括：在全国区域内(港、澳、台除外)为投保人拟订投保方案、选择保险人、办理投保手续；协助被保险人或受益人进行索赔；再保险经纪业务；为委托人提供防灾、防损或风险评估、风险管理咨询服务；中国保监会批准的其他业务。
+          </view>
+        </view>
+        <view class="weui-article__section">
+          <view class="weui-article__h3"></view>
+          <view class="weui-article__p">
+            新奥保险经纪将依托新奥集团庞大的网络资源和强大的品牌影响力，以“诚信、专业、服务”为宗旨，充分挖掘客户需求，协同保险公司共同创新产品与服务，为中小微企业提供风险管理，做亿万家庭用户的保险服务顾问，致力于成为“行业领先的中小企业及千家万户保险经纪服务专家”，助力保险行业蓬勃发展。
+
+          </view>
+        </view>
+        <view class="weui-article__section">
+          <view class="weui-article__h3"></view>
+          <view class="weui-article__p">
+            新奥保险经纪将依托新奥集团庞大的网络资源和强大的品牌影响力，以“诚信、专业、服务”为宗旨，充分挖掘客户需求，协同保险公司共同创新产品与服务，为中小微企业提供风险管理，做亿万家庭用户的保险服务顾问，致力于成为“行业领先的中小企业及千家万户保险经纪服务专家”，助力保险行业蓬勃发展。
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="page__hd">
+    <view class="page__title">新奥保险经纪有限公司分公司信息</view>
+    <view class="page__desc"></view>
+  </view>
+  <view class="page__bd" style='margin-top:40rpx;'>
+    <wux-accordion-group title="" label="" accordion default-current="{{ ['0'] }}">
+      <wux-accordion title="安徽分公司">
+        <view>
+          <view>注册地址：安徽省合肥市高新区长江西路683号拓基城市广场金座C幢办1022</view>
+          <view> 联系方式：0552-2081193</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="福建分公司">
+        <view>
+          <view>注册地址：福建省泉州市丰泽区东海街道津淮街东段25号燃气大厦A栋第6层</view>
+          <view> 联系方式：0595-28286021</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="广西分公司">
+        <view>
+          <view>注册地址：南宁市科园大道68号软件园二期16号楼401号房 </view>
+          <view> 联系方式：0771-6759083</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="河北分公司">
+        <view>
+          <view>注册地址：河北省石家庄市长安区谈南路63号睿和中心商业写字楼1905 </view>
+          <view> 联系方式：0311-89899953</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title=" 廊坊分公司">
+        <view>
+          <view>注册地址：河北省廊坊市经济技术开发区华祥路118号0389丘 </view>
+          <view> 联系方式：0316-2598895</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="湖南分公司">
+        <view>
+          <view> 注册地址：湖南省长沙市望城区普瑞东路8号长沙新奥燃气有限公司调度指挥中心612房
+          </view>
+          <view> 联系方式：0731-89908771</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="株洲分公司">
+        <view>
+          <view> 注册地址：湖南省株洲市天元区滨江南路蓝盾景园15、16、17、18栋（106-1）</view>
+          <view> 联系方式：0731-22872509</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="湘潭分公司">
+        <view>
+          <view>注册地址：湘潭市雨湖区雨湖路街道雨湖路113号市煤气公司八仙大厦 </view>
+          <view> 联系方式：0731-52255181</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="江苏分公司">
+        <view>
+          <view>注册地址：南京市建邺区奥体大街68号国际研发总部园2栋16楼 </view>
+          <view> 联系方式：025-82230225</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="辽宁分公司">
+        <view>
+          <view>注册地址：辽宁省沈阳市和平区青年大街390号 </view>
+          <view> 联系方式：024-23534266</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="内蒙古分公司">
+        <view>
+          <view>注册地址：内蒙古自治区通辽市科尔沁区胜利路499号 </view>
+          <view> 联系方式：0475-2296660</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="宁波分公司">
+        <view>
+          <view>注册地址：浙江省宁波市鄞州区天童南路1601号 </view>
+          <view> 联系方式：0574-88219882</view>
+        </view>
+      </wux-accordion>
+      <wux-accordion title="山东分公司">
+        <view>
+          <view>注册地址：山东省济南市高新区经十东路7000号汉峪金融商务中心A3-3号楼6层616室 </view>
+          <view> 联系方式：0531-58688316</view>
+        </view>
+      </wux-accordion>
+    </wux-accordion-group>
+
+
+  </view>
+  <view class="page__hd">
+    <view class="page__title">公司相关牌照和证件</view>
+    <view class="page__desc"></view>
+  </view>
+  <view class="page__bd">
+<view >
+    <image style='height:1000rpx;width:90%;padding-left:36rpx;' src='https://baoxian.enn.cn/xaejbtest/order/api/static/download?fileId=group1/M00/00/00/CiWSS1yLPB-ASLw1AAE590LkkWw796.png'></image>
+    <image style='width:90%;padding-left:30rpx;' src='https://baoxian.enn.cn/xaejbtest/order/api/static/download?fileId=group1/M00/00/00/CiWSS1yLPKGAMdhEAAvPKe4mFhY120.png'></image>
+</view>
+
+  </view>
+</view>

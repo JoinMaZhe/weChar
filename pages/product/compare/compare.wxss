@@ -1,0 +1,231 @@
+/* pages/product/compare3/compare3.wxss */
+
+/* pages/product/compare2/compare2.wxss */
+.page{
+ background: #F2F4F7;
+}
+.head{
+  background: #fff;
+  display: flex;
+  height: 172rpx;
+  width: 100%;
+  text-align: center;
+padding-top: 70rpx;
+font-family: PingFangSC-Regular;
+font-size: 24rpx;
+color: #666666;
+letter-spacing: 0;
+  
+}
+.head-left{
+  width: 45%;
+  margin-left: 20rpx;
+  padding-top: 20rpx;
+}
+.head-middle{
+  height: 70rpx;
+  font-family: PingFangSC-Semibold;
+font-size: 48rpx;
+color: #FFFFFF;
+letter-spacing: 0;
+background-image: linear-gradient(-180deg, #0AD6EC 0%, #04ACD4 100%);
+box-shadow: 0 6px 4px 0 rgba(8,197,226,0.20);
+border-radius:50%;
+}
+.head-right{
+  padding-top: 20rpx;
+ width: 40%;
+margin-right: 20rpx;
+}
+.page__bd{
+  margin-top:16rpx;
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+  background-color: #FFFFFF;
+}
+.wux-wingblank--default {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background: rgba(6, 181, 223, 0.04);
+  border: 2px solid #e2e2e2;
+  border-radius: 10px;
+}
+
+.sub-title {
+  padding-top: 28rpx;
+  padding-left: 58rpx;
+  padding-bottom: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333;
+  letter-spacing: 0;
+}
+
+.wux-card {
+  position: relative;
+  min-height: 192rpx;
+  padding-bottom: 12rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 0rpx 0 18rpx 0;
+}
+
+.wux-card--bordered:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid #d9d9d9;
+  border-radius: 20rpx;
+  border-top-width: 2rpx;
+  border-right-width: 2rpx;
+  border-bottom-width: 2rpx;
+  border-left-width: 2rpx;
+}
+
+.wux-card--full:before {
+  border-radius: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+.wux-card__hd {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 34rpx;
+  padding: 18rpx 30rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  background: rgba(6, 181, 223, 0.70);
+  border-radius: 10px 10px 0 0;
+}
+
+.wux-card__content {
+  width: 30%;
+  font-size: 24rpx;
+  text-align: center;
+  color: #fff;
+  border-right: 2px solid #e2e2e2;
+}
+
+.wux-card__thumb {
+  display: inline-block;
+  width: 160rpx;
+  height: 50rpx;
+  position: relative;
+  margin-left: auto;
+  /* margin-right: 10rpx; */
+  overflow: hidden;
+  vertical-align: middle;
+  margin-top: -10rpx;
+}
+
+.wux-card__extra {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.wux-card__bd {
+  position: relative;
+  padding: 30rpx 30rpx 12rpx;
+  font-size: 30rpx;
+  color: #333;
+  min-height: 80rpx;
+  /*display: flex;*/
+}
+
+.wux-card__bd:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 2rpx;
+  border-top: 2rpx solid #d9d9d9;
+  color: #d9d9d9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.wux-card__ft {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 28rpx;
+  color: #888;
+  padding: 0 30rpx;
+}
+
+.tr {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #666;
+  letter-spacing: 0;
+  display: flex;
+}
+
+.td {
+  width: 35%;
+  justify-content: center;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+font-size: 24rpx;
+color: #06B5DF;
+letter-spacing: 0;
+}
+.diff{
+  color: rgb(35, 105, 235);
+}
+
+.th {
+  font-family: PingFangSC-Regular;
+font-size: 24rpx;
+letter-spacing: 0;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+}
+
+.odd {
+  background: rgba(4, 172, 212, 0.10);
+}
+
+.event {
+  background: rgba(4, 172, 212, 0.10);
+}
+
+.botton{
+  height: 80rpx;
+  display: flex;
+	flex-direction: column;
+  justify-content:center;
+  text-align: center;
+  margin: 30rpx;
+
+}

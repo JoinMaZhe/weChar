@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "产品推荐",
+  "usingComponents": {
+    "wux-notice-bar": "../../../dist/notice-bar/index",
+    "wux-icon": "../../../dist/icon/index",
+    "wux-card": "../../../dist/card/index",
+    "wux-wing-blank": "../../../dist/wing-blank/index"
+  }
+}

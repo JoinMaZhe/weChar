@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "wux-steps": "../../../dist/steps/index",
+        "wux-step": "../../../dist/step/index",
+        "van-radio": "../../../vant/dist/radio/index",
+        "van-radio-group": "../../../vant/dist/radio-group/index"
+    }
+}

@@ -1,0 +1,13 @@
+/* pages/my/tobeadvisor/examine/examine.wxss */
+
+image {
+width:90px!important;
+height:90px!important;
+display:inline-block;
+overflow:hidden;
+margin-left: 39%;
+margin-top: 6rem;
+
+
+
+}

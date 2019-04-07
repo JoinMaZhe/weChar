@@ -1,0 +1,192 @@
+/**app.wxss**/
+@import "style/weui.wxss";
+page{
+  height: 100%;
+  background-color: #f8f8f8;
+  font-family: PingFangSC-Regular;
+}
+.page{
+  background: #ffffff;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /*padding: 200rpx 0;*/
+  box-sizing: border-box;
+  background: #ffffff;
+}
+.flex-wrp{
+  display: flex;
+}
+.flex-tab{
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.flex-item{
+  flex-grow: 1;
+  text-align: center;
+}
+.flex-item.active{
+  color:#ec400c;
+}
+.top-tab{
+ width: 100%;
+  position: relative;
+  height: 80rpx;
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  font-size: 32rpx;
+  line-height: 80rpx;
+  box-shadow: 0 2.5px 2.5px #fff;
+  margin: 0 0 8rpx 0;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1rpx solid #E2E2E2;
+}
+
+.toptab.active{
+  color: #ffffff;
+  border-bottom: solid 2px #ffffff;
+}
+.container{
+  padding: 0;
+  font-size: 14rpx;
+  color: #000;
+  background-color: #F8F8F8
+}
+.container .feed-item{
+  width: 690rpx;
+  padding: 30rpx 30rpx 20rpx;
+  margin: 18rpx 0 18rpx 0;
+  background: #ffffff;
+}
+.container .feed-item .feed-source{
+  width: 690rpx;
+  left: 0;
+  height: 50rpx;
+}
+.container .feed-item .feed-source .avatar{
+  position: relative;
+  display: inline-block;
+}
+.container .feed-item .feed-source a{
+  display: inline-block;
+  height: 40rpx;
+}
+.container .feed-item .feed-source .avatar image{
+  /*position: absolute;*/
+  display: inline-block;
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 45rpx;
+  top: 10rpx;
+  vertical-align: middle;
+}
+.container .feed-item .feed-source text{
+  /*position: absolute;*/
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  vertical-align: middle;
+  margin: 0 0 0 15rpx;
+  color: #a0acac;
+  font-size: 26rpx;
+}
+.container .feed-item .feed-source .item-more{
+  display: inline-block;
+  width: 40rpx;
+  height: 45rpx;
+  float: right;
+}
+.container .feed-item .feed-content{
+  padding: 10rpx 0 0 0;
+}
+.container .feed-item .feed-content .question text{
+  font-size: 28rpx;
+  font-weight: 600px;
+  line-height: 40rpx;
+  text-space: 5rpx;
+   display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+.container .feed-item .feed-content .answer-body{
+  padding: 10rpx 0 0 0;
+  /*height: 10rpx;*/
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color: #5b5b5b;
+}
+.container .feed-item .feed-content .answer-actions{
+  width: 690rpx;
+  padding: 10rpx 0  0;
+  color: #a0acac;
+}
+.container .feed-item .feed-content .answer-actions view{
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 0 10rpx 0 0;
+  font-size: 24rpx;
+}
+.container .feed-item .feed-content .answer-actions .dot ::after{
+  content: "•";
+}
+
+.bottom-btn {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    box-shadow: -2px -2px 5px #aaa;
+    z-index: 10;
+}
+.bottom-btn .isbtn {
+    background-color: white;
+    float: left;
+    width: 50%;
+    display: block;
+    font-size: 17px;
+    border-radius: 0;
+    padding-top: .7em;
+    height: 100%;
+    align: center;
+    text-align: center;
+}
+.bottom-btn .nobtn {
+    background-color: #04ACD4;
+    float: left;
+    color: #fff;
+
+    width: 50%;
+    display: block;
+    font-size: 17px;
+    border-radius: 0;
+    padding-top: .7em;
+    height: 100%;
+    text-decoration: none;
+    text-align: center;
+}
+
+.foot {
+  position: relative;
+  display: flex;
+  line-height: 55rpx;
+  border-top: 2rpx solid #ddd;
+  height: 95rpx;
+}
+.title1{
+  width: 100%;
+  color: #666;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  background: rgb(240, 240, 240);
+  padding-left: 30rpx;
+  padding-top: 25rpx;
+  height: 60rpx;
+  line-height: 40rpx;
+}

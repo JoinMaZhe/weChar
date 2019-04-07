@@ -1,0 +1,4 @@
+<!--pages/payment/payment.wxml-->
+<!--?payType=wechath5,wechat,wechatqr,aliqr,alipay
+{{paymentUrl}}?payType=wechath5,wechat,wechatqr,aliqr,alipay-->
+<web-view src="{{paymentUrl}}" />

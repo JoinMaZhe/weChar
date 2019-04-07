@@ -1,0 +1,111 @@
+<!--pages/article/list/list.wxml-->
+<view class="container">
+  <view class="top-tab flex-wrp flex-tab ">
+    <!--<view class="toptab swiper-tab-list flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" data-code="{{item.code}}" bindtap="switchTab">
+      {{item.label}}
+    </view>-->
+    <view class="swiper-tab-list toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" data-code="{{item.code}}" bindtap="switchTab">
+      {{item.label}}
+      <icon></icon>
+    </view>
+  </view>
+
+  <scroll-view scroll-y="true" class="container discovery withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+
+      <view class="nav_section">
+        <view>
+          <block wx:for="{{feed.content}}" wx:key="item.id">
+            <view class="nav_section_items" bindtap="bindItemTap" data-id="{{item.id}}">
+              <!--image-->
+              <view class="section_image">
+                <block wx:if="{{item.coverpath}}">
+                  <image class="icon-image" src="../../../images/1444983318907-_DSC1826.jpg" mode="aspectFill"></image>
+                </block>
+                <block wx:else>
+                  <image class="icon-image" src="{{url+item.primaryPicture}}" mode="aspectFill"></image>
+                </block>
+              </view>
+              <!--content-->
+              <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}">
+                <view class="section_cont_sub">
+                  <text>{{item.title}}</text>
+                </view>
+
+                <view class="section_cont_intro">
+
+                  <text>{{item.intro}}</text>
+                </view>
+              </view>
+
+
+            </view>
+
+          </block>
+        </view>
+
+      </view>
+    </view>
+    <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
+      <view class="nav_section">
+        <block wx:for="{{articlelist.content}}" wx:key="item.id">
+          <view class="nav_section_items" bindtap="bindItemTap" data-id="{{item.id}}">
+            <!--image-->
+            <view class="section_image" bindtap="navigateDetail" data-id="{{item.id}}">
+              <block wx:if="{{item.coverpath}}">
+                <image class="icon-mage" src="../../../images/1444983318907-_DSC1826.jpg" mode="aspectFill"></image>
+              </block>
+              <block wx:else>
+                <image class="icon-image" src="{{url+item.primaryPicture}}" mode="aspectFill"></image>
+              </block>
+            </view>
+            <!--content-->
+            <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}">
+              <view class="section_cont_sub">
+                <text>{{item.title}}</text>
+              </view>
+
+              <view class="section_cont_intro">
+                <text>{{item.intro}}</text>
+              </view>
+            </view>
+
+          </view>
+
+        </block>
+      </view>
+    </view>
+    <view class="ctnt2 placehold" hidden="{{currentNavtab==2 ? '' : true}}">
+      <view class="nav_section">
+        <block wx:for="{{articlelist.content}}" wx:key="item.id">
+          <view class="nav_section_items" bindtap="bindItemTap" data-id="{{item.id}}">
+            <!--image-->
+            <view class="section_image" bindtap="navigateDetail" data-id="{{item.id}}">
+              <block wx:if="{{item.coverpath}}">
+                <image class="icon-image" src="../../../images/1444983318907-_DSC1826.jpg" mode="aspectFill"></image>
+              </block>
+              <block wx:else>
+                <image class="icon-image" src="{{url+item.primaryPicture}}" mode="aspectFill"></image>
+              </block>
+            </view>
+            <!--content-->
+            <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}" data-url='{{item.url}}'>
+              <view class="section_cont_sub">
+                <text>{{item.title}}</text>
+              </view>
+
+              <view class="section_cont_intro">
+                <text>{{item.intro}}</text>
+              </view>
+            </view>
+
+
+          </view>
+
+        </block>
+      </view>
+    </view>
+
+  </scroll-view>
+
+</view>

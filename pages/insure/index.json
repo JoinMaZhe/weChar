@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "wux-divider": "../../../dist/divider/index",
+    "wux-card": "../../../dist/card/index",
+    "wux-wing-blank": "../../../dist/wing-blank/index"
+  },
+  "enablePullDownRefresh": false
+}

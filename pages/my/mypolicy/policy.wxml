@@ -1,0 +1,136 @@
+<view class="page" id="container">
+  <view class="page badge js_show">
+
+    <view class="page__bd">
+      <wux-notice-bar mode="closable" loop icon='../../images/horn.png'>
+        为方便您的信息显示完全，请及时完善我的信息
+      </wux-notice-bar>
+      <wux-segmented-control current="{{ current }}" values="{{ ['待支付', '我的保单'] }}" bind:change="onChange" />
+      <view wx:if='{{list[0].length>0}}'>
+        <block wx:for="{{list[0]}}" hidden='{{!show}}' data-idx='{{current}}' wx:for-item="item">
+          <view class="weui-form-preview" bindtap="toInfoTip" data-id="{{item.id}}" hidden='{{!show}}' data-code='{{item.polNo}}'>
+
+            <view class="weui-form-preview__hd">
+              <view class="weui-form-preview__item">
+                <label class="weui-form-preview__label" style='font-size:17px;color:#222222;'>
+                  {{item.productName}}
+                </label>
+                <view class="weui-form-preview__value">
+                  <!--<image style="width: 200px; height: 200px; background-color: #eeeeee; " src="{{src}}" mode="{{mode}}"></image>-->
+                </view>
+              </view>
+            </view>
+            <view class="weui-form-preview__bd">
+              <view class="weui-form-preview__item">
+                <label class="weui-form-preview__label">投保人</label>
+                <view class="weui-form-preview__value">{{item.applyVM.applyName}}</view>
+              </view>
+
+              <view class="weui-form-preview__item">
+                <label class="weui-form-preview__label">保单号</label>
+                <view class="weui-form-preview__value">{{item.polNo}}</view>
+              </view>
+
+              <view class="weui-form-preview__item">
+                <label class="weui-form-preview__label">保障期限</label>
+                <view class="weui-form-preview__value">
+                  一年
+                </view>
+              </view>
+
+              <view class="weui-form-preview__item">
+                <label class="weui-form-preview__label">承保日期</label>
+                <view class="weui-form-preview__value">{{item.recDate}}</view>
+              </view>
+            </view>
+
+          </view>
+          <view class="weui-form-preview__item" hidden='{{!show}}'>
+          <view class="weui-form-preview__label good_num" style='color: #ff6b02;padding-left:30rpx;'> 联系保险公司 </view>
+          <view bindtap='call' data-code="{{item.insCpyCode}}" class="btn_default">
+            <image class='image' src="../../../images/phone.png"></image>
+          </view>
+        </view>
+        </block>
+      </view>
+      <view wx:if='{{list[0].length==0}}' hidden='{{!show}}'>
+        <view class="weui-tab__content">
+          <wux-prompt visible="true" icon="{{ msg2.icon }}" title="{{ msg2.title }}" text="{{ msg2.text }}" buttons="{{ msg2.buttons }}" bind:click="buttonClicked" />
+        </view>
+
+      </view>
+
+      <block wx:for="{{list[1]}}" data-idx='{{current}}' wx:for-item="item">
+
+        <view class="weui-form-preview"  hidden='{{show}}'>
+          <view class="weui-form-preview__hd">
+            <view class="weui-form-preview__item">
+              <label class="weui-form-preview__label" style='font-size:17px;color:#222222;'>
+                {{item.productName}}
+              </label>
+              <view class="weui-form-preview__value">
+               <!--<text class='enn-button'data-polno="{{item.polNo}}" data-card='{{item.applyVM.applyCard}}' bindtap='cancelOrder'>退保</text>-->
+              <!-- <image style="width: 200px; height: 200px; background-color: #eeeeee; " src="{{src}}" mode="{{mode}}"></image>-->
+              </view>
+            </view>
+          </view>
+          <view class="weui-form-preview__bd" bindtap="toInfoTip" data-code='{{item.polNo}}' data-id="{{item.id}}">
+            <view class="weui-form-preview__item">
+              <label class="weui-form-preview__label">投保人</label>
+              <view class="weui-form-preview__value">{{item.applyVM.applyName}}</view>
+            </view>
+
+            <view class="weui-form-preview__item">
+              <label class="weui-form-preview__label">保单号</label>
+              <view class="weui-form-preview__value">{{item.polNo}}</view>
+            </view>
+
+            <view class="weui-form-preview__item">
+              <label class="weui-form-preview__label">保障期限</label>
+              <view class="weui-form-preview__value">
+                一年
+              </view>
+            </view>
+
+            <view class="weui-form-preview__item">
+              <label class="weui-form-preview__label">承保日期</label>
+              <view class="weui-form-preview__value">{{item.recDate}}</view>
+            </view>
+            <view class="weui-form-preview__item" hidden='{{item.hidden}}' style='color:#ff6b02'>
+              <label class="weui-form-preview__label">到期提醒</label>
+              <view class="weui-form-preview__value" wx:if="{{item.time>=0}}">
+              还有{{item.time}}天到期，请及时续保
+              </view>
+              <view class="weui-form-preview__value" wx:else>已过期，请及时续保</view>
+            </view>
+
+          </view>
+
+        </view>
+        <view class="weui-form-preview__item" hidden='{{show}}' >
+          <view class="weui-form-preview__label good_num" style='color: #ff6b02;padding-left:30rpx;'> 联系保险公司 </view>
+          <view bindtap='call' data-code="{{item.insCpyCode}}" class="btn_default">
+            <image class='image' src="../../../images/phone.png"></image>
+          </view>
+        </view>
+
+        <view class="weui-flex my_pay_onekey" hidden='{{show}}'>
+          <view class="weui-flex__item" data-polno="{{item.polNo}}" data-inscpycode='{{item.insCpyCode}}' bindtap='cancelOrder'>
+            <!--<text class='enn-button'data-polno="{{item.polNo}}" data-card='{{item.applyVM.applyCard}}' bindtap='cancelOrder'>退保</text>-->
+            <button style='background:#F2F4F7;color:#666666' class="weui-btn weui-btn_mini weui-btn_primary  btn_payment">
+              退保</button>
+          </view>
+          <view class="weui-flex__item" bindtap="goComment" data-product="{{item.productName}}" data-polno="{{item.polNo}}" data-orderid="{{item.channelOrderId}}">
+            <button class="weui-btn weui-btn_mini weui-btn_primary btn_renewal ">
+              评价</button>
+          </view>
+        </view>
+
+
+      </block>
+      <view wx:if='{{list[1].length==0}}' hidden='{{show}}'>
+        <wux-prompt visible="true" icon="{{ msg2.icon }}" title="{{ msg2.title }}" text="{{ msg2.text }}" buttons="{{ msg2.buttons }}" bind:click="buttonClicked" />
+      </view>
+    </view>
+  </view>
+</view>

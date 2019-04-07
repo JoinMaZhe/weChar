@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "wux-divider": "../../../dist/divider/index",
+    "wux-card": "../../../dist/card/index",
+    "wux-wing-blank": "../../../dist/wing-blank/index",
+    "wux-checkbox-group": "../../../dist/checkbox-group/index",
+    "wux-checkbox": "../../../dist/checkbox/index",
+    "wux-icon": "../../../dist/icon/index"
+  },
+  "enablePullDownRefresh": false
+}

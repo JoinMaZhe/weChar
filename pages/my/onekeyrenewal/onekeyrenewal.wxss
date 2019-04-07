@@ -1,0 +1,133 @@
+/* pages/my/onekeyrenewal/onekeyrenewal.wxss */
+/* pages/insure/index.wxss */
+@import "../../../style/weui.wxss";
+.page{
+  width:100%;
+}
+.radio-group{
+  display: flex;
+  width: 100%;
+}
+.weui-form-preview__item {
+  width: 100%;
+  height: 60rpx;
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  color: #333;
+  padding-top: 25rpx;
+  line-height: 40rpx;
+}
+.weui-form-preview__label{
+  color: #333;
+  font-size: 28rpx;
+  width: 150rpx;
+}
+.title1{
+  width: 100%;
+  color: #666;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  background: rgb(240, 240, 240);
+  padding-left: 30rpx;
+  padding-top: 25rpx;
+  height: 60rpx;
+  line-height: 40rpx;
+}
+.titles2 {
+    width: 100%;
+    color: black;
+    font-size: 17px;
+    background: #CAE1FF;
+    padding: 5px 0px 5px 15px;
+}
+text{
+    font-weight: 700;
+}
+.navigator-list {
+    width: 90%;
+    list-style: none;
+    display: -webkit-box;
+    margin: 0 auto;
+}
+
+.flex-item {
+text-align:center;
+justify-content: flex-start 
+
+}
+.insDetailtable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    line-height: 32px;
+    text-align: center;
+    color: #333;
+}
+.td{
+display: flex;
+font-size: 14px;
+
+}
+
+.th{
+  display: flex;
+  flex-flow: row;
+  font-size: 14px;
+ 
+}
+#weui-label{
+width:178rpx;
+
+}
+
+.weui-cell__bd{
+
+text-align:right;
+}
+
+
+/* .weui-input{
+
+font-size: 14px;
+color:#808080;
+
+
+
+}  */
+
+.flex-item.active{
+background: #43acf3; 
+color: white;
+}
+
+.weui-cell__hd{
+
+color:#333;
+}
+
+.weui-input {
+color:#333;
+font-size: 30rpx;
+}
+.weui-label{
+color:#333;
+font-size: 30rpx;
+
+}
+
+.page__bd{
+  color:#808080;
+}
+.liability{
+padding:2px 5px;
+display: flex;
+
+}
+.view1 {
+  background-color: #fff;
+}
+
+.view2 {
+  background-color: #f8f8f8;
+}
+

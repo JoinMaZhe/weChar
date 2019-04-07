@@ -1,0 +1,174 @@
+/* pages/my/mypolicy/policyinfo/policyinfo.wxss */
+@import "../../../../style/weui.wxss";
+
+.container {
+  min-height: 100% !important;
+  height: auto;
+  background: #f8f8f8;
+  display: block;
+  font-size: 18rpx;
+}
+
+.js_show {
+  margin: 0;
+  margin-bottom: 100rpx;
+}
+
+/* .weui-form-preview__label {
+   font-size: 14px;
+    float: left;
+    margin-right: 1em;
+    min-width: 4em;
+    color: #808080;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.weui-form-preview {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 20rem;
+}
+*/
+
+.weui-cells {
+  position: relative;
+  background-color: #fff;
+  line-height: 1.41176471;
+  font-size: 28rpx;
+}
+
+.weui-btn_primary {
+  background-color: #169bd5;
+  color: #ffff;
+}
+
+.btn_payment {
+  background:#F2F4F7;
+  color:#666666;
+  margin-top: 30px;
+  margin-left: 0.8rem;
+}
+
+.weui-btn_mini {
+  display: inline-block;
+  padding: 0 1.32em;
+  font-size: 15px;
+  width: 105px;
+}
+
+.btn_renewal {
+  /* float: right;   */
+  margin: 2px;
+  margin-left: 0.5rem;
+}
+
+.mycustom {
+  left: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.notice_head {
+  font-size: 13px;
+  color: #999;
+  letter-spacing: 0;
+  line-height: 18px !important;
+}
+
+.notice {
+  font-size: 13px;
+  color: #04acd4;
+  letter-spacing: 0;
+}
+
+.weui-form-preview__ft {
+  position: relative;
+  line-height: 18px !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* image {
+width:60px;
+height:24px;
+display:inline-block;
+overflow:hidden;
+
+} */
+
+.page {
+  width: 100%;
+}
+
+.radio-group {
+  display: flex;
+  width: 100%;
+}
+
+.titles2 {
+  width: 100%;
+  color: black;
+  font-size: 17px;
+  background: #cae1ff;
+  padding: 5px 0px 5px 15px;
+}
+
+text {
+  font-weight: 700;
+}
+
+.navigator-list {
+  width: 90%;
+  list-style: none;
+  display: -webkit-box;
+  margin: 0 auto;
+}
+
+.flex-item {
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.insDetailtable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  line-height: 32px;
+  text-align: center;
+}
+
+.td {
+  display: flex;
+  font-size: 14px;
+}
+
+.th {
+  display: flex;
+  flex-flow: row;
+  font-size: 14px;
+}
+
+/* #weui-label{
+width:178rpx;
+
+} */
+
+.weui-label {
+  text-align: left;
+}
+
+.weui-cell__bd {
+  text-align: right;
+}
+
+.weui-label {
+  width: auto !important;
+}
+
+.weui-flex__item {
+  margin-top: 20rpx;
+}

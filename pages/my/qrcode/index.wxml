@@ -1,0 +1,11 @@
+<view class='container'>
+<!--{{qrcode?qrcode:'/images/more/loading.gif'}}-->
+  <view  > 
+  <image src="{{qrcode?qrcode:'/images/more/loading.gif'}}"  bindtap="previewImage"  class="qrcode"></image>
+  <view class='page-bd'>
+  <view>我的二维码</view>   
+  </view>
+  
+  </view>
+	
+</view>

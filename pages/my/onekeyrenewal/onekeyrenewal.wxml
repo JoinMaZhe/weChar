@@ -1,0 +1,273 @@
+<!--pages/insure/index.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <!-- <view class="page__bd">
+    <image style="width:800rpx; height:{{ images[index].height }}rpx;" src="../../../images/family.jpg" />
+  </view>-->
+  <input name="type" value="1" hidden='true' />
+  <input name="produceId" value="{{product.id}}" hidden='true' />
+  <input name="insCpyCode" value="{{product.id}}" hidden='true' />
+  <input name="orderStatus" value="0" hidden='true' />
+  <input name="orderPayStatus" value="0" hidden='true' />
+  <input name="propoSalno" value="" hidden='true' />
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="title1">
+        投保产品信息
+      </view>
+      <view class="weui-form-preview__deital">
+        <view class="weui-form-preview__item view1">
+          <label class="weui-form-preview__label">产品名称：</label>
+          <view class="weui-form-preview__value">{{orderinfo.productName}}</view>
+        </view>
+        <view class="weui-form-preview__item view2">
+          <label class="weui-form-preview__label">保费：</label>
+          <view class="weui-form-preview__value">{{orderinfo.balance}}</view>
+
+        </view>
+        <view class="weui-form-preview__item view1">
+          <block wx:for="{{product.coverageTerms}}" wx:for-item="item">
+            <label class="weui-form-preview__label">保障期限：</label>
+            <view class="weui-form-preview__value">{{item.label}}</view>
+          </block>
+        </view>
+        <view class="weui-form-preview__item view2">
+          <label class="weui-form-preview__label">保单号：</label>
+          <view class="weui-form-preview__value">{{orderinfo.polNo}}</view>
+        </view>
+        <view class="weui-form-preview__item view1">
+          <label class="weui-form-preview__label">生效日期：</label>
+          <view class="weui-form-preview__value">{{startDate}}</view>
+        </view>
+        <view class="weui-form-preview__item  view2">
+          <label class="weui-form-preview__label">结束日期：</label>
+          <view class="weui-form-preview__value">{{endDate}}</view>
+
+        </view>
+
+      </view>
+      <view class="detailTable">
+        <view class="insDetailtable" style="width: 90%; margin: 0 10% 0 10%;">
+          <view class="th">
+            <view class="td" style="width: 70%;text-align:center;" id="assureTd">
+              保障内容</view>
+            <view class="td">保障额度</view>
+          </view>
+          <block wx:for-items="{{list}}" wx:for-item="item">
+            <view class="th">
+              <view class="td" style="width: 70%;" id="commoncostText">
+                {{item.liabilityName }}
+              </view>
+              <view class="td" id="commoncost">
+                {{item.amount }}元
+              </view>
+
+            </view>
+          </block>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <!--<view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="navigator navigator-list  flex-item" style="width: 90%; margin: 0 5% 0 5%; ">
+        <view class=" flex-item" wx:for-items="{{plans}}" wx:for-item="item" wx:for-index="idx" data-idx="{{idx}}">
+
+          <view style='width:169rpx;' class="weui-label  flex-item {{currentNavtab==idx? 'active':''}}" id="weui-label" data-id="{{item.id}}" data-idx="{{idx}}" data-currentNavtab='{{currentNavtab}}'>
+            
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+      <view class="detailTable">
+        <view class="insDetailtable" style="width: 90%; margin: 0 5% 0 5%;">
+          <view class="th">
+            <view class="td" style="width: 70%;text-align:center;" id="assureTd">
+              保障内容</view>
+            <view class="td">保障额度</view>
+          </view>
+          <block wx:for-items="{{list}}" wx:for-item="item">
+            <view class="th">
+              <view class="td" style="width: 70%;" id="commoncostText">
+                {{item.liabilityName }}
+              </view>
+              <view class="td" id="commoncost">
+                {{item.amount }}元
+              </view>
+
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>-->
+
+  <view class="page__bd  " style='margin-bottom: 0px;'>
+    <view class="title1">投保人信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='applyName' value='{{orderinfo.applyVM.applyName}}' />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">证件类型</view>
+        </view>
+        <view class="weui-cell__bd" wx:if="{{orderinfo.applyVM.applyCardType=='120001'}}">
+          <input class="weui-input" name='applyCardType' value='居民身份证' />
+        </view>
+
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">证件号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='applyCard' value='{{orderinfo.applyVM.applyCard}}' />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">手机号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='applyTel' value='{{orderinfo.applyVM.applyTel}}' />
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">邮箱地址</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='applyEmail' value='{{orderinfo.applyVM.applyEmail}}' />
+        </view>
+      </view>
+    </view>
+
+
+    <block wx:for="{{insurelist}}" wx:key="item.id">
+      <view class="title1">被保人信息</view>
+      <view class="weui-cells weui-cells_after-title">
+      </view>
+      <view class="weui-cells weui-cells_after-title" data-index='{{index}}'>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">与投保人关系</view>
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.applyRelation=='601005'}}">
+            <input class="weui-input" name='applyRelation{{index}}' value='本人' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.applyRelation=='006'}}">
+            <input class="weui-input" name='applyRelation{{index}}' value='配偶' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.applyRelation=='007'}}">
+            <input class="weui-input" name='applyRelation{{index}}' value='子女' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.applyRelation=='008'}}">
+            <input class="weui-input" name='applyRelation{{index}}' value='父母' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.applyRelation=='099'}}">
+            <input class="weui-input" name='applyRelation{{index}}' value='其他' />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">姓名</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name='insureName{{index}}' value='{{item.insureName}}' />
+          </view>
+
+        </view>
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">证件类型</view>
+          </view>
+
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120001'}}">
+            <input class="weui-input" name='insureCardType{{index}}' value='居民身份证' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120002'}}">
+            <input class="weui-input" name='insureCardType{{index}}' value='护照' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120003'}}">
+            <input class="weui-input" name='insureCardType{{index}}' value='军人证' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120005'}}">
+            <input class="weui-input" name='insureCardType{{index}}' value='港澳通行证' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120006'}}">
+            <input class="weui-input" name='insureCardType{{index}}' value='台胞证' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120009'}}">
+            <input class="weui-input" name='insureCardType{{index}}' value='其它' />
+          </view>
+
+        </view>
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">证件号码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name='insureCard{{index}}' value='{{item.insureCard}}' />
+          </view>
+
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">生日</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name='insureBirthday{{index}}' value='{{item.insureBirthday}}' />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">性别</view>
+          </view>
+
+          <view class="weui-cell__bd">
+            <view wx:if="{{item.insureSex=='M'}}">
+              <input class="weui-input" name='insureSex{{index}}' value='男' />
+            </view>
+            <view wx:else>
+              <input class="weui-input" name='insureSex{{index}}' value='女' />
+            </view>
+
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">有无社保</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view wx:if="{{item.socialFlag=='0'}}">
+              <input class="weui-input" name='socialFlag{{index}}' value='有' />
+            </view>
+            <view wx:else>
+              <input class="weui-input" name='socialFlag{{index}}' value='无' />
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" style='background-color:#169BD5;' type="primary" bindtap="showButton">保费试算 </button>
+    </view>
+  </view>
+
+
+  <view>
+
+
+  </view>
+</view>

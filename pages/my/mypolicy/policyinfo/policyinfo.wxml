@@ -1,0 +1,269 @@
+<!--pages/my/mypolicy/policyinfo/policyinfo.wxml-->
+
+<view class="container" id="">
+  <view class="title1">投保产品信息</view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">产品名称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" disabled='true' value='{{mdata.productName}}' />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">订单号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" disabled='true' value="{{mdata.polNo}}" placeholder="" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input" wx:if='{{mdata.channelOrderId}}'>
+      <view class="weui-cell__hd">
+        <view class="weui-label">保单号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" disabled='true' value="{{mdata.channelOrderId}}" placeholder="" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">保费</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" disabled='true' name='balance' value="¥{{mdata.balance}}" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">保额</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" disabled='true' name='totalAmount' value="{{mdata.totalAmount}}" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">生效日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" disabled='true' name='insureStartTime' value="{{mdata.insureStartTime}}" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">结束日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input"  disabled='true' name='insureEndTime' value="{{mdata.insureEndTime}}" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input" wx:if='{{mdata.appStatus=="ACPTINSD_SUCCESS"}}'>
+      <view class="weui-cell__hd">
+        <view class="weui-label">承保日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" disabled='true' value=" {{mdata.recDate}}" placeholder="" />
+      </view>
+    </view>
+  </view>
+  <view class="page__bd" >
+    <view class="title1">投保人信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='applyName'disabled='true'  value='{{mdata.applyVM.applyName}}' />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">证件类型</view>
+        </view>
+        <view class="weui-cell__bd" wx:if="{{mdata.applyVM.applyCardType=='120001'}}">
+          <input class="weui-input"  disabled='true' name='applyCardType' value='居民身份证' />
+        </view>
+
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">证件号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input"disabled='true'  name='applyCard' value='{{mdata.applyVM.applyCard}}' />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">手机号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input"disabled='true'  name='applyTel' value='{{mdata.applyVM.applyTel}}' />
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">邮箱地址</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" disabled='true' name='applyEmail' value='{{mdata.applyVM.applyEmail}}' />
+        </view>
+      </view>
+    </view>
+
+
+    <block wx:for="{{mdata.insuredVMS}}" wx:key="item.id">
+      <view class="title1">被保人信息</view>
+      <view class="weui-cells weui-cells_after-title">
+      </view>
+      <view class="weui-cells weui-cells_after-title" data-index='{{index}}'>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">与投保人关系</view>
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.applyRelation=='601005'}}">
+            <input class="weui-input"  disabled='true' name='applyRelation{{index}}' value='本人' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.applyRelation=='006'}}">
+            <input class="weui-input" disabled='true' name='applyRelation{{index}}' value='配偶' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.applyRelation=='007'}}">
+            <input class="weui-input" disabled='true' name='applyRelation{{index}}' value='子女' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.applyRelation=='008'}}">
+            <input class="weui-input" disabled='true'  name='applyRelation{{index}}' value='父母' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.applyRelation=='099'}}">
+            <input class="weui-input" disabled='true' name='applyRelation{{index}}' value='其他' />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">姓名</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input"disabled='true'  name='insureName{{index}}' value='{{item.insureName}}' />
+          </view>
+
+        </view>
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">证件类型</view>
+          </view>
+
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120001'}}">
+            <input class="weui-input" disabled='true'name='insureCardType{{index}}' value='居民身份证' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120002'}}">
+            <input class="weui-input" disabled='true'name='insureCardType{{index}}' value='护照' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120003'}}">
+            <input class="weui-input" disabled='true'name='insureCardType{{index}}' value='军人证' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120005'}}">
+            <input class="weui-input" disabled='true'name='insureCardType{{index}}' value='港澳通行证' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120006'}}">
+            <input class="weui-input" disabled='true'name='insureCardType{{index}}' value='台胞证' />
+          </view>
+          <view class="weui-cell__bd" wx:if="{{item.insureCardType=='120009'}}">
+            <input class="weui-input" disabled='true'name='insureCardType{{index}}' value='其它' />
+          </view>
+
+        </view>
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">证件号码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" disabled='true' name='insureCard{{index}}' value='{{item.insureCard}}' />
+          </view>
+
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">生日</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" disabled='true' name='insureBirthday{{index}}' value='{{item.insureBirthday}}' />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">性别</view>
+          </view>
+
+          <view class="weui-cell__bd" >
+            <view wx:if="{{item.insureSex=='M'}}">
+              <input class="weui-input"disabled='true' name='insureSex{{index}}' value='男' />
+            </view>
+            <view wx:else>
+              <input class="weui-input" disabled='true'name='insureSex{{index}}' value='女' />
+            </view>
+
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">有无社保</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view wx:if="{{item.socialFlag=='0'}}">
+              <input class="weui-input" disabled='true'name='socialFlag{{index}}' value='有' />
+            </view>
+            <view wx:else>
+              <input class="weui-input" disabled='true'name='socialFlag{{index}}' value='无' />
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+  <view wx:if='{{mdata.appStatus!="ACPTINSD_SUCCESS"}}' style="height:88rpx;background: #eee;width:100%;"></view>
+  <view class="page badge js_show">
+    <view class="page__bd">
+      <view class="weui-flex my_pay_onekey" wx:if='{{mdata.appStatus=="ACPTINSD_SUCCESS"}}'>
+        <view class="weui-flex__item" bindtap="feedBackEvent" data-id="{{mdata.salePersonId}}" data-orderid="{{mdata.id}}">
+          <button  class="weui-btn weui-btn_mini weui-btn_primary  btn_payment">
+            理赔协助</button>
+        </view>
+        <view class="weui-flex__item" bindtap="oneKeyEvent" data-pid="{{mdata.produceId}}" data-hid="{{mdata.salePersonId}}" data-orderid="{{mdata.id}}">
+          <button class="weui-btn weui-btn_mini weui-btn_primary btn_renewal ">
+            一键续保</button>
+        </view>
+        <view class="weui-flex__item" bindtap="cancelOrder" data-id="{{mdata.salePersonId}}" data-orderid="{{mdata.polNo}}" data-inscpycode='{{mdata.insCpyCode}}'>
+          <button  class="weui-btn weui-btn_mini weui-btn_primary  btn_payment">
+            退保</button>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells mycustom" bindtap='call'>
+      <view class="weui-cell ">
+        <div class="weui-cell__hd">
+          <image src="{{src}}" alt="" style="width:30px;height:24px;margin-right:5px;display:inline-block" />
+        </div>
+
+        <view wx:if="{{mdata.salePersonId=='000'}}">
+          <view class="weui-cell__bd" style='text-align:left;'>我的顾问：新奥保险 4006058000</view>
+        </view>
+        <view wx:else>
+          <view class="weui-cell__bd" style='text-align:left;'>我的顾问：{{myadvisor.name}} {{myadvisor.phone}}</view>
+        </view>
+
+      </view>
+    </view>
+
+
+
+  </view>
+
+
+</view>

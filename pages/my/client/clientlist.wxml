@@ -1,0 +1,91 @@
+<view class="page">
+  <view class="page__bd">
+     
+     
+     <block wx:for="{{listData}}" wx:for-index="idx" wx:key="{{code}}"  wx:for-item="item">
+    
+      <view class="feed-item " >
+
+        <view class="weui-form-preview___deital" >
+         
+          <view class="weui-form-preview__item liability"  bindtap="toInfoTip" data-id="{{item.policyHolderCertId}}">
+            <view class="weui-form-preview__label title"></view>
+             <view class="weui-form-preview__value"  
+             style='text-align:left;font-size:18px;color:#' >
+               {{item.policyHolderName}}
+              </view> 
+           </view>
+      
+
+         <view class="weui-form-preview__item liability ">
+            <view class="weui-form-preview__label title" 
+             bindtap="toInfoTip" data-id="{{item.policyHolderCertId}}">手机号</view>
+            <view class="weui-form-preview__value"  bindtap='call'
+             data-id="{{item.id}}"
+              data-tel="{{item.policyHolderPhone}}
+            >{{item.policyHolderPhone}} 
+             <image class='image' src="../../../images/phone.png"></image></view> 
+          </view>
+
+          <view class="weui-form-preview__item liability " bindtap="toInfoTip" data-id="{{item.policyHolderCertId}}">
+            <view class="weui-form-preview__label title" >身份证号</view>
+            <view class="weui-form-preview__value">{{item.policyHolderCertId}}</view>
+          </view>
+
+
+<!-- 
+          <view class="weui-form-preview__item liability " bindtap="toInfoTip" data-id="{{item.policyHolderCertId}}">
+            <view class="weui-form-preview__label title">需提醒保单</view>
+            <view class="weui-form-preview__value">{{item.productName}}</view>
+          </view>
+
+
+          <view class="weui-form-preview__item liability " bindtap="toInfoTip" data-id="{{item.policyHolderCertId}}">
+            <view class="weui-form-preview__label title">到期时间</view>
+            <view class="weui-form-preview__value">{{item.remark}}</view>
+          </view> -->
+
+
+        <view class="foot"  style="width:auto" >
+       
+          <!-- <i class="weui-icon-cancel" style='text-align:right;'></i>  -->
+          <view  class=" weui-btn_plain-primary_add"
+         
+            data-lableid="{{item.policyHolderCertId}}"
+            bindtap="showCustomDialog"
+            data-idx="{{idx}}"
+            style='white-space:nowrap;width:2em;height:2em'>
+             <span style=''>十</span></view>
+        
+        
+           <view  class="btn_default" wx:for="{{clientLable[idx]}}" wx:for-item="lab" style=''  >     
+                <view 
+                 bindtap="deletelable"
+                  wx:if="{{ lab != '' }}"
+                  data-idx="{{idx}}"
+                  data-lableid="{{item.policyHolderCertId}}"
+                  data-name="{{lab}}"
+                 class="weui-btn weui-btn_plain-primary"
+                  style='white-space:nowrap;float：left'>
+                 {{lab}}\t\t<span style=';color:red' >x</span></view>
+          </view> 
+        </view>
+        </view>
+      </view>
+    </block>
+
+    <van-dialog use-slot async-close show="{{ show }}" show-cancel-button bind:close="onClose" bind:onConfirm="onClose">
+    <van-field value="{{ username }}" label="" placeholder="请输入要添加的标签" bind:change="onChange1" />
+    </van-dialog>
+    <view class="weui-loadmore" wx:if='{{remind}}'>
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+     </view>
+    <view  class='hasemore' hidden='{{haseMore}}'>
+            <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多了</view>
+        </view>
+    </view>
+
+  </view>
+</view>

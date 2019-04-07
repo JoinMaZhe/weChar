@@ -1,0 +1,72 @@
+<!--pages/policys/index.wxml-->
+<view hidden='{{!show}}'>
+  <view class="weui-tab__content">
+    <wux-prompt visible="true" icon="{{ msg.icon }}" title="{{ msg.title }}" text="{{ msg.text }}" buttons="{{ msg.buttons }}" bind:click="buttonClicked" />
+  </view>
+</view>
+
+<block wx:if='{{policyList.length!=0}}' wx:for="{{policyList}}" data-idx='{{current}}' wx:for-item="item">
+
+  <view class="weui-form-preview" hidden='{{show}}'>
+    <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__item">
+        <label class="weui-form-preview__label" style='font-size:17px;color:#222222;'>
+          {{item.productName}}
+        </label>
+      </view>
+    </view>
+    <view class="weui-form-preview__bd" bindtap="toInfoTip" data-id="{{item.id}}" data-code='{{item.orderId}}'>
+      <view class="weui-form-preview__item">
+        <label class="weui-form-preview__label">投保人</label>
+        <view class="weui-form-preview__value">{{item.policyHolderName}}</view>
+      </view>
+<view class="weui-form-preview__item" wx:if='{{item.orderId}}'>
+        <label class="weui-form-preview__label">订单号</label>
+        <view class="weui-form-preview__value">{{item.orderId}}</view>
+      </view>
+      <view class="weui-form-preview__item" wx:if='{{item.policyId}}'>
+        <label class="weui-form-preview__label">保单号</label>
+        <view class="weui-form-preview__value">{{item.policyId}}</view>
+      </view>
+      <view class="weui-form-preview__item" >
+        <label class="weui-form-preview__label">承保日期</label>
+        <view class="weui-form-preview__value">{{item.insureStartTime}}</view>
+      </view>
+      <view class="weui-form-preview__item" hidden='{{OrderListWaitRenewal}}'>
+        <label class="weui-form-preview__label">保单状态</label>
+        <view wx:if="{{item.payStatus==='PAY_SUCCESS'&& item.orderStatus==='ACPTINSD_SUCCESS' }}" class="weui-form-preview__value">
+          已支付 已承保
+
+        </view>
+        <view wx:if="{{item.payStatus==='PAY_SUCCESS'&& item.orderStatus ==='UNINSURED' }}" class="weui-form-preview__value">
+          已支付 未承保
+        </view>
+        <view wx:if="{{item.payStatus!='PAY_SUCCESS'}}" class="weui-form-preview__value">
+          未支付 未承保
+        </view>
+        <view wx:if="{{item.payStatus==='PAY_SUCCESS'&& item.orderStatus==='SURRENDER_SUCCESS' }}" class="weui-form-preview__value">
+          已退保
+
+        </view>
+        <view wx:if="{{item.orderPayStatus==='PAY_SUCCESS'&& item.orderStatus==='SURRENDER_FAILURE' }}" class="weui-form-preview__value">
+          退保失败
+
+        </view>
+      </view>
+      <view class="weui-form-preview__item" wx:if="{{item.payStatus==='PAY_SUCCESS'&& item.orderStatus==='ACPTINSD_SUCCESS' }}" style='color:#ff6b02'>
+        <label class="weui-form-preview__label">到期提醒</label>
+        <view class="weui-form-preview__value" wx:if="{{item.time>=0}}">
+          还有{{item.time}}天到期，请及时续保
+        </view>
+        <view class="weui-form-preview__value" wx:else>已过期，请及时续保</view>
+      </view>
+    </view>
+
+  </view>
+  <view class="weui-form-preview__item" hidden='{{show}}'>
+    <view class="weui-form-preview__label good_num" style='color: #ff6b02;padding-left:30rpx;'> 联系保险公司 </view>
+    <view bindtap='call' data-code="{{item.insurerCode}}" class="btn_default">
+      <image class='image' src="../../images/phone.png"></image>
+    </view>
+  </view>
+</block>

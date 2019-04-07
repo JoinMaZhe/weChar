@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="pay">
+    <view>订单号:<text class="desc">{{payParam.outTradeNo}}</text>
+    </view>
+
+    <view>商品名称:
+      <text class="desc">{{payParam.body}}</text>
+    </view>
+
+    <view>商品金额:
+      <text class="price">¥{{payParam.totalFee}}</text>
+    </view>
+    <label class="way"></label>
+  </view>
+  <view class="weui-msg__opr-area">
+            <view class="weui-btn-area">
+                <button class="weui-btn" type="warn" bindtap="bindBilling">去支付</button>
+                
+            </view>
+        </view>
+</view>

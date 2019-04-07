@@ -1,0 +1,78 @@
+/* pages/order/index.wxss */
+@import "../../style/weui.wxss";
+.radio-group{
+  display: flex;
+  width: 100%;
+}
+.detailTable{
+  
+  background-color:#fff;
+
+}
+.bottomtable {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: -2px -2px 5px #aaa;
+    z-index: 10;
+}
+.bottom-btn {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    box-shadow: -2px -2px 5px #aaa;
+    z-index: 10;
+    margin-top: 50rpx;
+}
+.bottom-btn .isbtn {
+    background-color: white;
+    float: left;
+    width: 50%;
+    display: block;
+    font-size: 17px;
+    border-radius: 0;
+    padding-top: .7em;
+    height: 100%;
+    text-align: center;
+}
+.bottom-btn .nobtn {
+    background-color: #04ACD4;
+    float: left;
+    color: #fff;
+    width: 50%;
+    display: block;
+    font-size: 17px;
+    border-radius: 0;
+    padding-top: .3em;
+    height: 100%;
+    text-decoration: none;
+    text-align: center;
+}
+.title1{
+  width: 100%;
+  color: #666;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  background: rgb(240, 240, 240);
+  padding-left: 30rpx;
+  padding-top: 25rpx;
+  height: 60rpx;
+  line-height: 40rpx;
+}
+.weui-input {
+  text-align: right;
+  color: #808080;
+  padding-left: 50rpx;
+}
+.weui-cell__hd {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.weui-cell__bd {
+  font-size: 30rpx;
+  color: #d8d8d8;
+}

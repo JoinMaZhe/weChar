@@ -1,0 +1,41 @@
+<!--pages/my/feedback/feedback.wxml-->
+<view class="container" id="container">
+
+
+  <form bindsubmit="formSubmit">
+    <view class="page input js_show">
+
+
+
+      <view class="page__bd">
+        <view class=" weui-cells_form">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <textarea bindinput='input' maxlength="200" bindblur="bindTextAreaBlur" class="weui-textarea" placeholder="请输入解约原因..." value='{{fbinfo}}' id="feedbackinfo"></textarea>
+              <view class="weui-textarea-counter">
+                <span>{{currentNoteLen|0}}</span>/{{noteMaxLen}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='weui-cells_form'>
+      <view class='hotword' style='background-color:#999999' data-content='执业证到期' bindtap='hotword'>执业证到期</view>
+      <view class='hotword' style='background-color:#999999' data-content='转行' bindtap='hotword'>转行</view>
+      <view class='hotword' style='background-color:#999999' data-content='心情不好' bindtap='hotword'>心情不好</view>
+      <view class='hotword' style='background-color:#999999' data-content='换住址' bindtap='hotword'>换住址</view>
+      <view class='hotword' style='background-color:#999999' data-content='换城市' bindtap='hotword'>换城市</view>
+    </view>
+
+
+
+
+    <view class="weui-btn-area">
+      <!-- <a class="weui-btn weui-btn_primary" href="javascript:" bindtap="savefeedback" >我要反馈</a> -->
+      <button class="weui-btn weui-btn_primary" style="line-height:2.3 ;background-color:#04ACD4" formType="submit">确认提交</button>
+      <button class="weui-btn weui-btn_primary" style="line-height:2.3 ;background-color:#F8F8F8;color:black" formType="submit">取消解约</button>
+    </view>
+
+  </form>
+</view>

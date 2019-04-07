@@ -1,0 +1,203 @@
+<!--pages/article/list/list.wxml-->
+<view class="container">
+  <view class="top-tab flex-wrp flex-tab ">
+    <!--<view class="toptab swiper-tab-list flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" data-code="{{item.code}}" bindtap="switchTab">
+      {{item.label}}
+    </view>-->
+    <view class="swiper-tab-list toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{descs2}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" data-code="{{item.code}}" bindtap="switchTab">
+      {{item.label}}
+      <icon></icon>
+    </view>
+  </view>
+
+  <scroll-view scroll-y="true" class="container discovery withtab" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+      <view class="nav_section">
+        <block wx:for="{{articlelist}}" wx:key="item.id">
+          <view class="feed-item {{index === articlelist.length - 1 ? 'rank__item--last' : ''}}">
+            <view class="weui-form-preview__deital">
+              <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label title">{{item.shortName}}</view>
+                <view class="weui-form-preview__value">{{item.insuranceCompany.fullName}}</view>
+              </view>
+
+              <!-- <navigator class="link" url="../../product/detial/detial?id={{item.id}}"> </navigator>-->
+              <block wx:for="{{item.coverageTerms}}" wx:for-item="item">
+                <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label  view2">保障期限：{{item.label}}</view>
+                </view>
+              </block>
+              <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label view2">增值服务：
+                  <wux-tag color="red">{{item.clamslable}} </wux-tag>
+                </view>
+              </view>
+              <!-- <view class="weui-form-preview__item liability " wx:for="{{item.onePlanLiability}}">
+            <view class="weui-form-preview__label">{{item.liabilityName}}</view>
+            <view class="weui-form-preview__value"> {{item.amount}}元</view>
+          </view> -->
+            </view>
+            <view class="foot">
+              <view class="good_num">{{item.price==-1?'保费试算后可见':'¥'+item.price+'起'}} </view>
+              <view bindtap="bindItemTap" data-id="{{item.id}}" data-url="{{item.pictureUrl}} " data-code="{{item.code}}" class="btn_default">
+                <image src="../../../images/insure.png"></image>
+              </view>
+            </view>
+            <view>
+
+            </view>
+          </view>
+
+        </block>
+      </view>
+      <view wx:if='{{articlelist.length==0}}' hidden='{{!show}}'>
+        <view class="weui-tab__content">
+          <wux-prompt visible="true" icon="{{ msg2.icon }}" title="{{ msg2.title }}" text="{{ msg2.text }}" buttons="{{ msg2.buttons }}" bind:click="buttonClicked" />
+        </view>
+
+      </view>
+    </view>
+
+
+    <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
+      <view class="nav_section">
+        <block wx:for="{{articlelist}}" wx:key="item.id">
+          <view class="feed-item">
+            <view class="weui-form-preview__deital">
+              <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label title">{{item.shortName}}</view>
+                <view class="weui-form-preview__value">{{item.insuranceCompany.fullName}}</view>
+              </view>
+
+              <!-- <navigator class="link" url="../../product/detial/detial?id={{item.id}}"> </navigator>-->
+              <block wx:for="{{item.coverageTerms}}" wx:for-item="item">
+                <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label  view2">保障期限：{{item.label}}</view>
+                </view>
+              </block>
+              <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label view2">增值服务：
+                  <wux-tag color="red">{{item.clamslable}} </wux-tag>
+                </view>
+              </view>
+              <!-- <view class="weui-form-preview__item liability " wx:for="{{item.onePlanLiability}}">
+            <view class="weui-form-preview__label">{{item.liabilityName}}</view>
+            <view class="weui-form-preview__value"> {{item.amount}}元</view>
+          </view> -->
+            </view>
+            <view class="foot">
+              <view class="good_num">¥{{item.price}} 元起 </view>
+              <view bindtap="bindItemTap" data-id="{{item.id}}" data-url="{{item.pictureUrl}} " data-code="{{item.code}}" class="btn_default">
+                <image src="../../../images/insure.png"></image>
+              </view>
+            </view>
+            <view>
+
+            </view>
+          </view>
+
+        </block>
+      </view>
+      <view wx:if='{{articlelist.length==0}}' hidden='{{!show}}'>
+        <view class="weui-tab__content">
+          <wux-prompt visible="true" icon="{{ msg2.icon }}" title="{{ msg2.title }}" text="{{ msg2.text }}" buttons="{{ msg2.buttons }}" bind:click="buttonClicked" />
+        </view>
+
+      </view>
+    </view>
+
+    <view class="ctnt2 placehold" hidden="{{currentNavtab==2 ? '' : true}}">
+      <view class="nav_section">
+        <block wx:for="{{articlelist}}" wx:key="item.id">
+          <view class="feed-item {{index === articlelist.length - 1 ? 'rank__item--last' : ''}}">
+            <view class="weui-form-preview__deital">
+              <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label title">{{item.shortName}}</view>
+                <view class="weui-form-preview__value">{{item.insuranceCompany.fullName}}</view>
+              </view>
+
+              <!-- <navigator class="link" url="../../product/detial/detial?id={{item.id}}"> </navigator>-->
+              <block wx:for="{{item.coverageTerms}}" wx:for-item="item">
+                <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label  view2">保障期限：{{item.label}}</view>
+                </view>
+              </block>
+              <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label view2">增值服务：
+                  <wux-tag color="red">{{item.clamslable}} </wux-tag>
+                </view>
+              </view>
+              <!-- <view class="weui-form-preview__item liability " wx:for="{{item.onePlanLiability}}">
+            <view class="weui-form-preview__label">{{item.liabilityName}}</view>
+            <view class="weui-form-preview__value"> {{item.amount}}元</view>
+          </view> -->
+            </view>
+            <view class="foot">
+              <view class="good_num">¥{{item.price}} 元起 </view>
+              <view bindtap="bindItemTap" data-id="{{item.id}}" data-url="{{item.pictureUrl}} " data-code="{{item.code}}" class="btn_default">
+                <image src="../../../images/insure.png"></image>
+              </view>
+            </view>
+            <view>
+
+            </view>
+          </view>
+        </block>
+      </view>
+      <view wx:if='{{articlelist.length==0}}' hidden='{{!show}}'>
+        <view class="weui-tab__content">
+          <wux-prompt visible="true" icon="{{ msg2.icon }}" title="{{ msg2.title }}" text="{{ msg2.text }}" buttons="{{ msg2.buttons }}" bind:click="buttonClicked" />
+        </view>
+
+      </view>
+    </view>
+    <view class="ctnt2 placehold" hidden="{{currentNavtab==3 ? '' : true}}">
+      <view class="nav_section">
+        <block wx:for="{{articlelist}}" wx:key="item.id">
+          <view class="feed-item {{index === articlelist.length - 1 ? 'rank__item--last' : ''}}">
+            <view class="weui-form-preview__deital">
+              <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label title">{{item.shortName}}</view>
+                <view class="weui-form-preview__value">{{item.insuranceCompany.fullName}}</view>
+              </view>
+
+              <!-- <navigator class="link" url="../../product/detial/detial?id={{item.id}}"> </navigator>-->
+              <block wx:for="{{item.coverageTerms}}" wx:for-item="item">
+                <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label  view2">保障期限：{{item.label}}</view>
+                </view>
+              </block>
+              <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label view2">增值服务：
+                  <wux-tag color="red">{{item.clamslable}} </wux-tag>
+                </view>
+              </view>
+              <!-- <view class="weui-form-preview__item liability " wx:for="{{item.onePlanLiability}}">
+            <view class="weui-form-preview__label">{{item.liabilityName}}</view>
+            <view class="weui-form-preview__value"> {{item.amount}}元</view>
+          </view> -->
+            </view>
+            <view class="foot">
+              <view class="good_num">¥{{item.price}} 元起 </view>
+              <view bindtap="bindItemTap" data-id="{{item.id}}" data-url="{{item.pictureUrl}} " data-code="{{item.code}}" class="btn_default">
+                <image src="../../../images/insure.png"></image>
+              </view>
+            </view>
+            <view>
+
+            </view>
+          </view>
+        </block>
+      </view>
+      <view wx:if='{{articlelist.length==0}}' hidden='{{!show}}'>
+        <view class="weui-tab__content">
+          <wux-prompt visible="true" icon="{{ msg2.icon }}" title="{{ msg2.title }}" text="{{ msg2.text }}" buttons="{{ msg2.buttons }}" bind:click="buttonClicked" />
+        </view>
+
+      </view>
+    </view>
+
+  </scroll-view>
+
+
+</view>

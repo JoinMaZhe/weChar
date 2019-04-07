@@ -1,0 +1,32 @@
+<view class="table">
+  <view class="tr bg-w">
+  <view class="th">时间</view>
+    <view class="th">保单份数</view>
+    <view class="th ">保费</view>
+  </view>
+  <block >
+  
+    <view class="tr bg-g" >
+      <view class="td" bindtap="toInfoTip" data-id="{{item.id}}">{{}}当天</view>
+      <view class="td">{{dayNum}}</view>
+      <view class="td">{{dayPremium}}</view>
+    </view>
+
+    <view class="tr bg-g" >
+      <view class="td" bindtap="toInfoTip" data-id="{{item.id}}">{{}}当周</view>
+      <view class="td">{{weekNum}}</view>
+      <view class="td">{{weekPremium}}</view>
+    </view>
+
+    <view class="tr bg-g" >
+      <view class="td" bindtap="toInfoTip" data-id="{{item.id}}">{{}}当月</view>
+      <view class="td">{{monthNum}}</view>
+      <view class="td">{{monthPremium}}</view>
+    </view>
+
+
+
+
+
+  </block>
+</view>

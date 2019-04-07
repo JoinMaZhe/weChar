@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": false,
+  "disableScroll": true,
+  "usingComponents": {
+    "wux-tag": "../../../dist/tag/index",
+    "wux-segmented-control": "../../../dist/segmented-control/index",
+    "wux-prompt": "../../../dist/prompt/index",
+    "wux-notice-bar": "../../../dist/notice-bar/index"
+  }
+}

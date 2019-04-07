@@ -1,0 +1,156 @@
+/* pages/article/list/list.wxss */
+
+.container {
+  height: 100%;
+  margin-top: 14rpx;
+}
+
+.swiper-tab-list {
+  font-family: PingFangSC-Light;
+  font-size: 32rpx;
+  display: inline-block;
+  width: 25%;
+  color: #666;
+  border-bottom: 0rpx;
+  position: relative;
+}
+
+.swiper-tab-list i {
+  position: absolute;
+  bottom: 30%;
+  right: 14%;
+  width: 0px;
+  height: 0px;
+  border: 5px solid #4e4e4e;
+  border-top-color: #4e4e4e;
+  border-bottom-color: #4e4e4e;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.active i {
+  border: 5px solid #ff6b02;
+  border-top-color: #ff6b02;
+  border-bottom-color: #4e4e4e;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.toptab.active {
+  color: #ff6b02;
+  border-bottom: 2rpx solid #ff6b02;
+}
+
+.placehold {
+  font-size: 28rpx;
+  padding: 80rpx 0;
+}
+
+.weui-form-preview__deital {
+  font-size: 0.9em;
+  text-align: right;
+  color: #999;
+  line-height: 2;
+}
+
+.detail-title {
+  float: left;
+  width: 100%;
+  height: 2.46em;
+  padding-bottom: 0.5em;
+  padding-top: 0.6em;
+  padding-left: 0.6em;
+}
+
+.title {
+  font-family: PingFangSC-Regular;
+  font-size: 34rpx;
+  color: #222;
+}
+
+.view2 {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.liability {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.good_num {
+  font-family: PingFangSC-Medium;
+  font-size: 26.4rpx;
+  color: #ff6b02;
+  width: 169rpx;
+  padding-top: 23rpx;
+  line-height: 55rpx;
+}
+
+.foot {
+  position: relative;
+  display: flex;
+  line-height: 55rpx;
+  border-top: 2rpx solid #ddd;
+  height: 95rpx;
+}
+
+.btn_default image {
+  padding-left: 359rpx;
+  padding-top: 23rpx;
+  width: 150rpx;
+  height: 50rpx;
+}
+
+.detail-title {
+  background: 0 0 no-repeat;
+  background-size: auto 100%;
+  text-align: left;
+  color: rgb(0, 0, 0);
+  font-size: 2.92em;
+  display: block;
+  height: 100%;
+  padding-top: 0.55em;
+}
+
+.list {
+  display: block;
+  background-color: #f8f8f8;
+}
+
+image {
+  width: 100%;
+  height: 5.5em;
+}
+
+.page {
+  height: 100%;
+  padding: 0;
+  font-size: 14rpx;
+  color: #000;
+  background-color: #fff;
+}
+
+.insuranceCompany {
+  display: flex;
+  height: 70rpx;
+  flex-direction: row;
+  padding: 30rpx;
+  position: relative;
+}
+
+.insuranceCompany image {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20rpx;
+  position: relative;
+  top: -2rpx;
+  width: 160rpx;
+  height: 60rpx;
+}
+
+.insuranceCompanyName {
+  margin-top: 15rpx;
+}

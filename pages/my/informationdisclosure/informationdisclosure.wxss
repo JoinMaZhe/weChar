@@ -1,0 +1,35 @@
+/* pages/my/informationdisclosure/informationdisclosure.wxss */
+@import "../../../style/weui.wxss";
+.page{
+  width: 100%;
+}
+.page__hd{
+    text-align: center;
+}
+.page__title{
+    display: inline-block;
+    padding: 20rpx 40rpx;
+    border-bottom: 1px solid #CCCCCC;
+}
+.page__title {
+    text-align: left;
+    font-size: 36rpx;
+    font-family: PingFangSC-Medium;
+    color: #666666;
+}
+.weui-article__h1 {
+font-size:24rpx;
+ color: #666666;
+margin-bottom:.9em;
+
+}
+.weui-article__h3{
+  font-size:24rpx;
+ color: #666666;
+margin-bottom:.9em;
+}
+.weui-article__section{
+font-size:24rpx;
+ color: #666666;
+margin-bottom:.9em;
+}

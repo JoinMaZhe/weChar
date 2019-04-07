@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "wux-filterbar": "../../../dist/filterbar/index",
+    "wux-search-bar": "../../../dist/search-bar/index",
+    "wux-prompt": "../../../dist/prompt/index",
+    "van-collapse": "../../../vant/dist/collapse/index",
+    "van-collapse-item": "../../../vant/dist/collapse-item/index"
+  }
+}

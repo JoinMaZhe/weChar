@@ -1,0 +1,102 @@
+/* pages/article/list/list.wxss */
+@import "../../../style/weui.wxss";
+
+.container {
+  height: 100%;
+  background: #f8f8f8;
+}
+
+.swiper-tab-list {
+  font-family: PingFangSC-Light;
+  font-size: 32rpx;
+  display: inline-block;
+  width: 25%;
+  color: #666;
+  border-bottom: 0rpx;
+  position: relative;
+}
+
+.toptab.active {
+  border-bottom: 6rpx solid #04acd4;
+ border-radius: 2px;
+  color: #04acd4;
+  font-family: PingFangSC-Light;
+  font-size: 32rpx;
+  
+}
+.placehold {
+  font-size: 28rpx;
+}
+
+/* 导航对应内容项 */
+
+.nav_section {
+  width: 100%;
+  background-color: #fff;
+}
+
+.nav_section_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #ddd;
+  position: relative;
+}
+
+.nav_section_items:active {
+  background: #ddd;
+}
+
+.nav_section_items .section_image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+
+.nav_section_items .section_cont {
+  width: 550rpx;
+  font-size: 26rpx;
+  color: #a9a9a9;
+}
+
+.nav_section_items .section_cont view {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  padding-left: 20rpx;
+}
+
+.nav_section_items .section_cont .section_cont_intro {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.nav_section_items .section_cont .section_cont_sub {
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular;
+  line-height: 48rpx;
+  color: #222;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  padding-right: 20rpx;
+}
+
+.nav_section_items .section_cont .section_cont_intro {
+  font-size: 26rpx;
+  color: #999;
+  font-family: PingFangSC-Regular;
+}
+
+.icon-image {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  position: relative;
+  top: -2rpx;
+  width: 120rpx;
+  height: 120rpx;
+}

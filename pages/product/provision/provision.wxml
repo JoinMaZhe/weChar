@@ -1,0 +1,19 @@
+<!--pages/product/provision/provision.wxml-->
+<view class="page">
+  <view class="my-item" style='background:#fff;display:flex;flex-direction:column;height:auto;'>
+    <view>
+      详情信息
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <block wx:for="{{provisionList}}" wx:for-item="item">
+        <view data-url="{{item.url}}" data-type="pdf" catchtap='downloadFile' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd"> {{item.name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+</view>

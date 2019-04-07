@@ -1,0 +1,120 @@
+.search{padding:7px 0 7px 20rpx;overflow:hidden;height: 119rpx}
+.search .search-btn{background:#ffffff;color:#999;font-size:32rpx;text-align:middle;height:67rpx;
+  line-height:67rpx;border-radius:33.5rpx;width:710rpx;margin: 26rpx 0 26rpx 0}
+.search .search-btn:active{background:#fff5f0}
+.search image{width:19rpx;height:14rpx;vertical-align:middle;float: right;padding: 30rpx}
+.search .category{padding:4px 15px;float:right}
+.search .search-btn .selectinfo{
+  padding: 40rpx;
+}
+
+/*外部容器*/
+.container {
+  height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+  background: #F8F8F8;
+  margin: 18rpx 0 18rpx 0;
+} 
+
+/*整体列表*/
+.carts-list {
+	display: flex;
+	flex-direction: column;
+	/* padding: 20rpx 40rpx; */
+}
+
+/*每行单元格*/
+.carts-item {
+	display: flex;
+	flex-direction: row;
+	height:150rpx;
+	/*width属性解决标题文字太短而缩略图偏移*/
+	width:100%;
+	border-bottom: 1px solid #eee;
+	padding: 25rpx 40rpx 40rpx 100rpx;
+  background: #ffffff;
+  margin: 8rpx 0 8rpx 0; 
+}
+
+/*左部图片*/
+.carts-image {
+	width:150rpx;
+	height:150rpx;
+}
+
+
+/*右部描述*/
+.carts-text {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+/*右上部分标题*/
+.carts-title {
+	margin: 10rpx 10rpx 0 10rpx;
+	font-family: PingFangSC-Regular;
+  font-size: 36rpx;
+  color: #222222;
+  text-align: left
+}
+
+/*右下部分价格与数量*/
+.carts-subtitle {
+  margin: 10rpx;
+	font-size: 25rpx;
+	color:darkgray;
+	/*padding: 0 20rpx;*/
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+}
+
+/*价格
+.carts-price {
+	color: #f60;
+}
+*/
+.carts-intro {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #999999;
+  text-align: left;
+}  
+
+.carts-firstprice{
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #666666;
+  text-align: left;
+}
+
+.price{
+  font-family: PingFangSC-Medium;
+font-size: 26.4rpx;
+color: #FF6B02;
+letter-spacing: 0.55rpx;
+text-align: left;
+}
+
+/*复选框样式*/
+.carts-list icon {
+	margin-top: 60rpx;
+	margin-right: 20rpx;
+}
+
+.botton{
+  width: 360rpx;
+  height: 80rpx;
+  display: flex;
+	flex-direction: column;
+  justify-content:center;
+  text-align: center;
+  margin: 60rpx;
+
+}
